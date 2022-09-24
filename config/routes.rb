@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'dashboard/index'
-  get 'dashboard/home'
+
   
+  #DASHBOARD
+  get "dashboard", to:'dashboard#index'
+  get "parametres", to:'dashboard#home'
+
+
   devise_for :users
   get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -29,8 +29,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :gender
       t.string :slug
       t.string :category
+      t.string :avatar
       t.boolean :newletter
       t.boolean :terms
+
+      
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
