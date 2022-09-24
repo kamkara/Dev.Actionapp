@@ -29,7 +29,8 @@
             </div>
             <div class="flex md:w-2/3 justify-center  items-center bg-white mx-2">
 
-                <%= form_with(model: bemembership) do |f| %>
+<%= form_with(model: bemembership , class:"form") do |f| %>
+
                     <h1 class="text-gray-800 font-bold text-2xl ">Vous et Action<sup>+</sup>
                         Agisons Ensemble pour sauver des vies</h1>
                     <p class="text-sm font-normal text-gray-600 ">Devenez Membre Adherant d'Action<sup>+</sup>
@@ -46,42 +47,33 @@
                             </ul>
                         </div>
                     <% end %>
-                    <div class="mx-2">
-                        <div class="flex items-center mt-8 mb-2">
-                            <%= f.text_field :first_name, class:"placeholder:italic placeholder:text-slate-400
-           outline-none border rounded-md py-2 w-full 
-           focus:outline-none focus:ring focus:border-blue-200", 
-           placeholder:"Nom ..." %>
-                            <%= f.text_field :last_name, class:"placeholder:italic placeholder:text-slate-400
-           outline-none border ml-2 rounded-md py-2 w-full 
-           focus:outline-none focus:ring focus:border-blue-200", placeholder:"Prénom..." %>
+                    <div class=" form-control mx-2">
+                        <div class="form-outline flex items-center mt-6 my-2">
+                            <%= f.text_field :first_name, class:"form-control p-2 mr-2",
+                             placeholder:"Nom" %>
+                            <%= f.text_field :last_name, class:" form-control p-2 ",
+                             placeholder:"Prénom" %>
                         </div>
 
-                        <%= f.email_field :email, placeholder:"Addresse Email ...", 
-        class:"placeholder:italic placeholder:text-slate-400
-           outline-none border rounded-md py-2 w-full 
-           focus:outline-none focus:ring focus:border-blue-200" %>
+                        <%= f.email_field :email, placeholder:"Addresse Email",
+                         class:"form-control p-2" %>
 
-                        <div class="flex items-center my-2">
-                            <%= f.text_field :country, class:"placeholder:italic placeholder:text-slate-400 
-          border rounded-md py-2 w-full focus:outline-none focus:ring focus:border-blue-500",
-           placeholder:"Pays de résidence ..." %>
+                        <div class="form-outline flex items-center my-2">
+                            <%= f.text_field :country, class:"form-control p-2 mr-2",
+                             placeholder:"Pays de résidence" %>
 
-                            <%= f.text_field :citytown, class:"placeholder:italic placeholder:text-slate-400
-           outline-none border ml-2 rounded-md py-2 w-full 
-           focus:outline-none focus:ring focus:border-blue-200", 
-          placeholder:"Ville de résidence ..." %>
+                            <%= f.text_field :citytown, class:"form-control p-2",
+                             placeholder:"Ville de résidence" %>
                         </div>
 
-                        <%= f.text_field :contact, class:"flex border py-2 rounded-md w-full
-           placeholder:mx-4 focus:outline-none focus:ring focus:border-blue-500", 
-           placeholder:"N° télèphone suivi de indicatif du pays..." %>
-                        <%= f.text_field :nationality,
-           class:"placeholder:italic placeholder:text-slate-400
-           outline-none border my-2 rounded-md py-2 w-full 
-           focus:outline-none focus:ring focus:border-blue-200",
-            placeholder:"Votre Nationalité..." %>
-                        <div class="flex w-full">
+                        <div class="form-outline flex items-center my-2">
+                            <%= f.text_field :contact, class:"p-2 form-control mr-2",
+                                placeholder:"N° Tel + Indicatif pays" %>
+                            <%= f.text_field :nationality, class:"form-control p-2",
+                            placeholder:"Votre Nationalité" %>
+                        </div>
+
+                        <div class="flex w-full my-2">
                             <div class="mr-4">
                                 <p class="font-semibold">Salarié? :</p>
                             </div>
@@ -92,16 +84,16 @@
                             <%= f.radio_button :employer, 'Entrepreneur' %>
                             <span class="mx-2">Entrepreneur</span>
                         </div>
-                        <%= f.text_field :profession, class:"flex border py-2  rounded-md w-full 
-          placeholder:mx-4 outline-none", placeholder:"Votre Profession..." %>
+                        <%= f.text_field :profession, class:"form-control p-2", 
+                            placeholder:"Votre Profession" %>
 
-                        <div class="flex w-full">
+                        <div class="flex w-full my-2">
                             <div class="mr-4">
                                 <p class="font-semibold">Matrimoniale? :</p>
                             </div>
-                            <%= f.radio_button :matrimonial, 'Mademoiselle', checked: true , class:"ml-2"%>
+                            <%= f.radio_button :matrimonial, 'Mademoiselle', checked: true , class:"mx-2"%>
                             <span class="mr-2">Mlle</span>
-                            <%= f.radio_button :matrimonial, 'Madame', class:"ml-2" %>
+                            <%= f.radio_button :matrimonial, 'Madame', class:"mx-2" %>
                             <span class="mr-2">Mme</span>
                             <%= f.radio_button :matrimonial, 'Monsieur' %>
                             <span class="">M.</span>
@@ -111,9 +103,9 @@
                             <div class="mr-4">
                                 <p class="font-semibold">Vous êtes? :</p>
                             </div>
-                            <%= f.radio_button :gender, 'Femme' , checked: true, class:"ml-2"%>
+                            <%= f.radio_button :gender, 'Femme' , checked: true, class:"mx-2"%>
                             <span class:"mr-2">Femme</span>
-                            <%= f.radio_button :gender, 'Homme', class:"ml-2"%>
+                            <%= f.radio_button :gender, 'Homme', class:"mx-2"%>
                             <span class="">Homme</span>
                         </div>
                         <div class="w-full my-2">
@@ -156,7 +148,9 @@
                                 </p>
                             </div>
                             <div>
-                                <%= f.submit "Oui J'Adhère", class:"uppercase block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
+                                <%= f.submit "Oui j'adhère", 
+                                class:"uppercase block w-full bg-green-600 mt-2 py-2 
+                                rounded-xl text-white font-semibold mb-2 " %>
                             </div>
                         </div>
                     <% end %>
@@ -195,7 +189,8 @@
                             Le Résumé s'affichera ici
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary bg-gray-100 text-black " data-bs-dismiss="modal">Fermer</button>
+                            <button type="button" class="btn btn-secondary bg-gray-100 text-black " 
+                            data-bs-dismiss="modal">Fermer</button>
 
                         </div>
                     </div>
