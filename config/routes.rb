@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-
+  resources :bememberships
+  
+  
+  #HEADER
+  get "adhesion", to:'bememberships#new'
+  get 'good', to:"bememberships#page_good" 
   
   #DASHBOARD
   get "dashboard", to:'dashboard#index'
