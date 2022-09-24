@@ -39,7 +39,7 @@
       <%= f.email_field :email, placeholder:"Addresse Email", class:"p-2 form-control" %>			
       <div class=" form-outline flex w-full py-2 mb-2">
           <%= f.text_field  :country,
-          class:"form-control p-2 mr-2", placeholder:"Pays de résidence Actuelle..." %>
+          class:"form-control p-2 mr-2", placeholder:"Pays de résidence" %>
         <%= f.text_field :full_contact, placeholder:"N° téléphone",
          class:"form-control p-2" %>	
       </div>
@@ -63,11 +63,14 @@
       </div>
       <!-- component -->
         <div class="mb-2">
-        <%= image_tag("logo/logo-action.png", class:"h-10 w-10 rounded-full object-cover object-center", alt:"Avatar Upload") %>
+        <%= image_tag("logo/logo-action.png", 
+        class:"h-10 w-10 rounded-full object-cover object-center",
+         alt:"Avatar Upload") %>
         </div>
 
       <div class="cursor-pointer mt-2">
-        <span class="mt-2 text-base leading-normal px-4 py-2 bg-blue-500 text-white text-sm rounded-full" >Photo profil :</span>
+        <span class="mt-2 text-base leading-normal px-4 py-2 bg-blue-500 
+        text-white text-sm rounded-full" >Photo profil :</span>
         <%= f.file_field :avatar, class:"hidden" %>
       </div>
   
