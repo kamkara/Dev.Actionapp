@@ -1,22 +1,15 @@
  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-
-      <div class="contact-info d-flex align-items-center">
+  <div id="topbar" class="flex justify-around fixed-top">
+    <div class="flex">
+      <div class="contact-info flex align-items-center">
         <i class="bi bi-phone d-flex align-items-center ">
-          <span><a href="#projets-soutenir" class="font-bold text-white">Soutenir Projet</a></span>
-        </i>
-        <i class="bi bi-clock d-flex align-items-center ms-4 ">
-          <a href="#terrain" class="">
-            <span class="font-bold text-white">Prochain Action<sup class="">+</sup> </span>
-          </a>
+          <span><a href="#projets-soutenir" class="font-bold ">Faire un don</a></span>
         </i>
       </div>
-
-      <div class="languages d-none d-md-flex align-items-center">
-        <ul>
-          <li><%= link_to 'Je Fais Un Don', dons_path, class:"font-bold text-white" %></li>
-        </ul>
+      <div class="contact-info flex align-items-center">
+        <i class="bi bi-clock d-flex align-items-center ms-4 ">
+          <li><%= link_to 'Se Connecter', "action-plus-sign-in", class:"font-bold" %></li>
+        </i>
       </div>
     </div>
   </div>

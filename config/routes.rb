@@ -15,7 +15,15 @@ Rails.application.routes.draw do
   ##### DASHBOARD ######
   get "dashboard", to:'dashboard#index'
   get "parametres", to:'dashboard#home'
-
+  
+  ##### USER ######
+   devise_scope :user do
+    get 'action-plus-sign-in', to: 'devise/sessions#new'
+    get 'action-plus-sign-up', to: 'devise/registrations#new', as: "new_user_registration"
+    get 'profile/edit'    => 'devise/registrations#edit'
+    get 'profile/cancel'  => 'devise/registrations#cancel'
+    delete 'sign-out', to: 'devise/sessions#destroy'
+  end
 
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
