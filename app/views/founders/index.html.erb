@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Founders</h1>
+
+<div id="founders">
+  <% @founders.each do |founder| %>
+    <%= render founder %>
+    <p>
+      <%= link_to "Show this founder", founder %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New founder", new_founder_path %>

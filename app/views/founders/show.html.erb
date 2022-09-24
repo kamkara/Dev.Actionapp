@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @founder %>
+
+<div>
+  <%= link_to "Edit this founder", edit_founder_path(@founder) %> |
+  <%= link_to "Back to founders", founders_path %>
+
+  <%= button_to "Destroy this founder", @founder, method: :delete %>
+</div>

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  resources :founders
   resources :campagnes
   resources :bememberships
   
+  get "mot-fondateur", to:"founders#index"
+
+
   ##### CAMPAGNES ######
   get "new-campagne", to:"campagnes#new"
   get "campagnes", to:"campagnes#index"
@@ -10,6 +14,7 @@ Rails.application.routes.draw do
   ##### HEADER ######
   get "adhesion", to:'bememberships#new'
   get 'good', to:"bememberships#page_good" 
+  get "donner", to:'donner#index'
   
   
   ##### DASHBOARD ######
