@@ -20,7 +20,7 @@ class CreateActionTextTables < ActiveRecord::Migration[6.0]
       config = Rails.configuration.generators
       setting = config.options[config.orm][:primary_key_type]
       primary_key_type = setting || :primary_key
-      foreign_key_type = setting || :uuid
+      foreign_key_type = setting || :bigint
       [primary_key_type, foreign_key_type]
     end
 end

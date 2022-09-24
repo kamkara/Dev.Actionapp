@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
+  resources :campagnes
   resources :bememberships
   
+  ##### CAMPAGNES ######
+  get "new-campagne", to:"campagnes#new"
+  get "campagnes", to:"campagnes#index"
+  get "edit-campagnes", to:"campagnes#edit"
   
-  #HEADER
+  ##### HEADER ######
   get "adhesion", to:'bememberships#new'
   get 'good', to:"bememberships#page_good" 
   
-  #DASHBOARD
+  
+  ##### DASHBOARD ######
   get "dashboard", to:'dashboard#index'
   get "parametres", to:'dashboard#home'
 
