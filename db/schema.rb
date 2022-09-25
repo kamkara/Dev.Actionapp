@@ -75,9 +75,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_110520) do
     t.string "citytown"
     t.string "nationality"
     t.string "matrimonial"
-    t.string "professeion"
+    t.string "profession"
     t.string "employer"
     t.string "source"
+    t.string "avatar"
     t.boolean "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

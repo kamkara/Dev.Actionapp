@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   resources :articles
   resources :founders
   resources :campagnes
@@ -6,7 +7,11 @@ Rails.application.routes.draw do
   
   get "mot-fondateur", to:"founders#index"
 
+  get "display-articles", to:"articles#articles_lists"
+  get "agisons-ensemble", to:"involved#index"
 
+
+  
   ##### CAMPAGNES ######
   get "new-campagne", to:"campagnes#new"
   get "campagnes", to:"campagnes#index"
@@ -20,7 +25,11 @@ Rails.application.routes.draw do
   
   ##### DASHBOARD ######
   get "dashboard", to:'dashboard#index'
-  get "parametres", to:'dashboard#home'
+  get "dashboard-setup", to:"dashboard#home"
+  get "dashboard-membres", to:"dashboard#members"
+  get "dashboard-campagnes", to:"dashboard#campagnes"
+  get "dashboard-projets", to:"dashboard#projets"
+  get "dashboard-adhesions", to:"dashboard#bememberships"
   
   ##### USER ######
    devise_scope :user do

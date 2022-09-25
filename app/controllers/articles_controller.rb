@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user!, except: %i[ articles_lists show]
   before_action :set_article, only: %i[ show edit update destroy ]
 
   # GET /articles or /articles.json
@@ -7,6 +7,10 @@ class ArticlesController < ApplicationController
     @articles = Article.all.order('created_at desc')
     @articlesMonthly = @articles.monthlyActif
     @articlesWeekly = @articlesMonthly.weeklyActif
+  end
+
+  def articles_lists
+    @articles = Article.all.order('created_at desc')
   end
 
   # GET /articles/1 or /articles/1.json

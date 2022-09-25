@@ -8,4 +8,22 @@ class DashboardController < ApplicationController
 
   def home
   end
+
+  def members
+    @MembersList = Bemembership.all.order('created_at desc')
+    @MembersMonthly = @MembersList.monthlyActif
+    @MembersWeekly = @MembersMonthly.weeklyActif
+  end
+
+  def campagnes
+    
+  end
+
+  def projets
+    
+  end
+
+  def bememberships
+    
+  end
 end

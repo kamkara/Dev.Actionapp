@@ -68,6 +68,6 @@ class BemembershipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bemembership_params
-      params.require(:bemembership).permit(:first_name, :last_name, :email, :country, :contact, :terms, :citytown, :nationality, :matrimonial, :professeion, :employer, :source, :gender)
+      params.require(:bemembership).permit(:first_name, :last_name, :avatar, :email, :country, :contact, :terms, :citytown, :nationality, :matrimonial, :profession, :employer, :source, :gender)
     end
 end

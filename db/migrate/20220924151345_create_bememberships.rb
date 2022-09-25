@@ -10,9 +10,10 @@ class CreateBememberships < ActiveRecord::Migration[7.0]
       t.string :citytown
       t.string :nationality
       t.string :matrimonial
-      t.string :professeion
+      t.string :profession
       t.string :employer
       t.string :source
+      t.string :avatar
       t.boolean :gender
 
       t.timestamps

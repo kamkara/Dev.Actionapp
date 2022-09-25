@@ -1,4 +1,6 @@
 class Bemembership < ApplicationRecord
+        has_one_attached :avatar
+
     validates :first_name, :last_name, :email,
             :country, :contact, :gender, :terms, :citytown,
             :employer, :profession, :matrimonial,
