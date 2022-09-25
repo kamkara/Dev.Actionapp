@@ -6,21 +6,17 @@ class User < ApplicationRecord
 
 
   has_many :posts
+  has_many :articles
   has_many :abouts
   has_many :projets
   has_many :campagnes
-  has_many :blogs
-  has_many :articles
-  has_many :legals
-  has_many :privates
+  #has_many :blogs
+  #has_many :legals
+  #has_many :privates
   has_one_attached :avatar
 
   def full_name
     "#{self.first_name} #{self.last_name}" 
-  end  
-   
-  def slug
-    "#{self.full_name}" 
   end
 
   validates :first_name, :last_name, :full_name, :email, :password,
