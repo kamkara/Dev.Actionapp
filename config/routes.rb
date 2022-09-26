@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projets
   
   resources :articles
   resources :founders
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   
   ##### CAMPAGNES ######
   get "new-campagne", to:"campagnes#new"
-  get "campagnes", to:"campagnes#index"
+  get "nos-campagnes-financements", to:"campagnes#index"
   get "edit-campagnes", to:"campagnes#edit"
   
   ##### HEADER ######
@@ -22,7 +23,12 @@ Rails.application.routes.draw do
   get 'good', to:"bememberships#page_good" 
   get "donner", to:'donner#index'
   
-  
+
+  ##### PROJECTS ######
+  get "nouveau-projet", to:"projets#new"
+  get "les-projets", to:"projets#index"
+
+
   ##### DASHBOARD ######
   get "dashboard", to:'dashboard#index'
   get "dashboard-setup", to:"dashboard#home"

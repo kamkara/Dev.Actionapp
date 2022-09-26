@@ -4,10 +4,10 @@ class CampagnesController < ApplicationController
 
   # GET /campagnes or /campagnes.json
   def index
-    @CampagnesList = Campagne.all.order('created_at desc')
-    @MembersList = User.membership
-    @CampagnesMonthly = @CampagnesList.monthlyActif
-    @CampagnesWeekly = @CampagnesMonthly.weeklyActif
+    @campagnes = Campagne.all.order('created_at desc')
+    #@MembersList = User.membership
+    #@CampagnesMonthly = @CampagnesList.monthlyActif
+    #@CampagnesWeekly = @CampagnesMonthly.weeklyActif
   end
 
   # GET /campagnes/1 or /campagnes/1.json

@@ -1,28 +1,26 @@
-<p style="color: green"><%= notice %></p>
-
-<!-- component -->
-<div>
-    <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
-        <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false" class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
-        <!-- Sidebar -->
-        <%= render "dashboard/shared/sidebar" %>
-          
-        <div class="flex-1 flex flex-col overflow-hidden">
+<% @title="Les campagnes de financement" %>
+    <div class="mb-40">
         <!-- Header -->
-        <%= render "dashboard/shared/header" %>
-            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
-                <div class="container mx-auto px-6 py-8">
-                    <h3 class="text-gray-700 text-2xl font-medium">Tableau de bord</h3>
-                    <div class="mt-8">
-                        <!-- Header -->
-                        <%= render "campagnes/shared/statistics" %>
-                    </div>
-    
-                    <div class="flex flex-col mt-8">
-                      <%= render "campagnes/shared/campagnes-list" %>
-                    </div>
-                </div>
-            </main>
+        <%= render "welcome/shared/top_bar" %>
+        <%= render "welcome/shared/header" %>
+    </div>
+    <div class="w-full">
+        <div class="mx-14">
+            <h1 class="font-bold text-3xl ">Lorem  sit amet amet consectetur adipisicing  corporis rerum!</h1>
+
+            <div class="mx-20 bg-gray-100 my-14">
+                <p class="p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ullam porro expedita explicabo facilis placeat earum! Iste deserunt et quis impedit quaerat iusto, cum hic dolores non labore, assumenda repellendus.</p>
+            </div>
         </div>
     </div>
-</div>
+    <div class="">
+        <% @campagnes.each do |campagne| %>
+            <div class="border p-2">
+                <h2 class="font-bold my-4 text-xl md:text-2xl"> <%= campagne.title %> </h2>
+                <div class="my-4 border p-2"> <%= campagne.content %> </div>
+            </div>
+        <% end %>
+    </div>
+
+<%= render "welcome/shared/footer" %>
+

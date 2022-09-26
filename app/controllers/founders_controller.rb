@@ -1,8 +1,10 @@
 class FoundersController < ApplicationController
+  before_action :authenticate_user!, except: %i[index]
   before_action :set_founder, only: %i[ show edit update destroy ]
 
   # GET /founders or /founders.json
   def index
+    #@founder = Founder.where("status= ?", "la lune")
     @founders = Founder.all
   end
 
