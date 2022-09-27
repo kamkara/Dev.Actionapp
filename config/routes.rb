@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :benevols
   resources :projets
   
   resources :articles
@@ -16,6 +17,10 @@ Rails.application.routes.draw do
   get "new-article", to:"articles#new"
   get "nos-articles", to:"articles#index"
 
+
+  ##### CAMPAGNES ######
+  get "new-benevol", to:"benevols#new"
+  get "nos-benevols", to:"benevols#index"
 
   ##### CAMPAGNES ######
   get "new-campagne", to:"campagnes#new"
@@ -41,6 +46,7 @@ Rails.application.routes.draw do
   get "dashboard-campagnes", to:"dashboard#campagnes"
   get "dashboard-projets", to:"dashboard#projets"
   get "dashboard-adhesions", to:"dashboard#bememberships"
+  get "dashboard-benevols", to:"dashboard#benevols"
   
   ##### USER ######
    devise_scope :user do

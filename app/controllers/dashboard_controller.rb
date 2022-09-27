@@ -37,5 +37,10 @@ class DashboardController < ApplicationController
   def bememberships
     
   end
+  def benevols
+    @Benevols = Benevol.dashboard
+    @BenevolsMonthly = @Benevols.monthlyActif
+    @BenevolsWeekly = @BenevolsMonthly.weeklyActif
+  end
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_26_190524) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_27_192304) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -82,6 +82,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_26_190524) do
     t.boolean "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "benevols", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "full_name", null: false
+    t.string "role"
+    t.string "link_fb"
+    t.string "link_tw"
+    t.string "link_ldin"
+    t.string "img"
+    t.string "status"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_benevols_on_user_id"
   end
 
   create_table "campagnes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -161,6 +175,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_26_190524) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "users"
+  add_foreign_key "benevols", "users"
   add_foreign_key "campagnes", "users"
   add_foreign_key "founders", "users"
   add_foreign_key "projets", "users"
