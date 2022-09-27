@@ -1,21 +1,15 @@
 <% @title="Liste des articles" %>
 <!-- component -->
+<div class="row row-cols-1 row-cols-md-2 g-4 chefs">
+    <% @Articles.each do |article| %>
+        <div class="col-lg-4 col-md-6 rounded-md bg-white m-2">
+            <div class="border p-2 ">
 
-<section class="h-screen w-screen bg-gradient-to-br from-pink-50 to-indigo-100 p-8">
-
-    <div
-        class="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-2">
-        <!-- Card 1 -->
-        <% @Articles.each do |article| %>
-
-            <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
                 <% if article.heroImg.attached? %>
                     <%= image_tag(article.heroImg, class:"w-full h-50") %>
                 <% else %>
                     <p class="">Pas d'image de couverture</p>
                 <% end %>
-
-
                 <div class="p-3">
                     <span class="text-sm text-primary"><%= article.published %></span>
                     <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
@@ -32,8 +26,10 @@
                     </p>
                 </div>
             </div>
-        <% end %>
 
-    </div>
-</section>
+
+        </div>
+
+    <% end %>
+</div>
 

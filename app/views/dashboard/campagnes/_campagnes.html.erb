@@ -1,28 +1,23 @@
 <% @title="Liste des campagnes" %>
 <!-- component -->
+<div class="row row-cols-1 row-cols-md-2 g-4 chefs">
+    <% @Campagnes.each do |campagne| %>
+        <div class="col-lg-4 col-md-6 rounded-md bg-white m-2">
+            <div class="border p-2 ">
 
-<section class="flex bg-gradient-to-br from-pink-50 to-indigo-100 p-8">
-
-    <div class="flex justify-center my-2">
-        <!-- Card 1 -->
-        <% @Campagnes.each do |camp| %>
-            <div class="bg-white rounded-lg border  mx-2 my-4">
-
-                <% if camp.heroImg.attached? %>
-                    <%= image_tag(camp.heroImg, class:"w-full") %>
+                <% if campagne.heroImg.attached? %>
+                    <%= image_tag(campagne.heroImg, class:"w-full h-50") %>
                 <% else %>
                     <p class="">Pas d'image de couverture</p>
                 <% end %>
-
-
                 <div class="p-3">
-                    <span class="text-sm text-primary"><%= camp.published %></span>
+                    <span class="text-sm text-primary"><%= campagne.published %></span>
                     <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
-                        <%= camp.title %>
+                        <%= campagne.title %>
                     </h3>
                     <p class="paragraph-normal text-gray-600">
-                        <%= link_to campagne_path(camp), class:"hover:text-black text-black no-underline" do %>
-                            <%= truncate(strip_tags(camp.content.to_s.html_safe), length: 400) %>
+                        <%= link_to campagne_path(campagne), class:"hover:text-black text-black no-underline" do %>
+                            <%= truncate(strip_tags(campagne.content.to_s.html_safe), length: 600) %>
                             <span class="bg-blue-300" id="start-reading">
                                 <i class="mx-2">Lire plus >>
                                 </i>
@@ -31,7 +26,10 @@
                     </p>
                 </div>
             </div>
-        <% end %>
 
-    </div>
-</section>
+
+        </div>
+
+    <% end %>
+</div>
+
