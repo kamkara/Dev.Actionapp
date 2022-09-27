@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   
 
   ##### PROJECTS ######
-  get "nouveau-projet", to:"projets#new"
+  get "new-projet", to:"projets#new"
   get "les-projets", to:"projets#index"
 
 

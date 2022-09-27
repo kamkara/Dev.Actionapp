@@ -1,41 +1,75 @@
+<%= form_for( @projet) do |f| %>
+    <% if @projet.errors.any? %>
+        <div style="color: red">
+            <h2><%= pluralize(projet.errors.count, "error") %>
+                prohibited this article from being saved:</h2>
 
-<%= form_for(@projet,  inline_errors: true) do |f| %>
- 
-  <div class="mt-2">
-    <%= f.text_field  :title, label:"Nom du Projet", 
+            <ul>
+                <% @projet.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="form-outline mt-2">
+        <%= f.text_field  :title, label:"Nom du Projet", 
     class:"form-control focus-none p-2 border rounded-md",
-     placeholder:'Nom du projet ...' %>
-  </div>
-  
-  <div class="my-8">
-    <%= f.rich_text_area :content, hide_label:true,
-     class:" bg-white border-2 rounded-md ",
-      placeholder:'Contenu du projet ...' %>
-  </div>
- 
- <div class="my-8">
- <%= f.label :heroImg, 'Image de couverture' %>
- <div class="">
-    <%= f.file_field :heroImg, class:"" %>
- </div>
- </div>
-  <div class="group">
-<%= f.date_field :published, class:" p-2 border rounded-md" %>
+     placeholder:"Titre du Projet ..."  %>
+    </div>
 
-      <%= f.text_field :amount, 
-       hide_label:true , placeholder:"Montant prévisionnel...",
-        class:"p-2 border outline-none rounded-md mx-12" %>
-    
-    <%= f.select :status, Projet::STATUS, 
-    class:"p-6 border border-blue-500 rounded-md",
-     placeholder:'Status...' %>
+    <div class="my-8 bg-white p-1">
 
-  </div>
-  </div>
- 
-      
+        <%= f.rich_text_area :content, hide_label:true,
+      class:"border rounded-md ",
+      placeholder:"Contenu du Projet ..."  %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.submit "Créer le projet", class:"font-bold p-2 border rounded-md bg-green-500 font-semibold text-white my-2" %>
-  </div>
-<% end %>
+    <div class="flex w-full">
+        <div
+            class="flex justify-between mx-4 my-4">
+            <!-- component -->
+            <div class="mb-2 mr-10">
+                <%= image_tag("logo/logo-action.png", 
+                    class:"h-10 w-10 rounded-full object-cover object-center ml-10",
+                    alt:"Avatar Upload") %>
+                <br>
+                    <label class="cursor-pointer">
+                        <span class="mt-2 text-base leading-normal px-4 py-2 bg-blue-500
+                                                                                text-white text-sm rounded-full">La Couverture:</span>
+                        <%= f.file_field :heroImg, class:"hidden" %>
+                    </label>
+                </div>
+
+                <div class="">
+                    <%= f.label "Date Publication:" %>
+                    <br>
+                        <%= f.date_field :published, class:" p-2 border rounded-md" %>
+                    </div>
+
+                    <div class=" ml-10">
+                        <%= f.label 'Le Budget:' %>
+
+                        <br>
+                            <%= f.text_field  :amount, 
+                          class:"form-control p-2 border rounded-md",
+                          placeholder:"Le montant ..."  %>
+
+                        </div>
+
+                        <div class=" ml-10">
+                            <%= f.label 'Status:' %>
+                            <br>
+                                <%= f.select(:status, Projet::STATUS, { prompt: "Choisir" }, class:" p-2 bg-white rounded-none w-full select") %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions -mt-4 ml-12">
+                <%= f.submit "Créer le projet", class:"font-bold p-2 border rounded-md bg-green-500 text-white my-2" %>
+            </div>
+
+        <% end %>
+

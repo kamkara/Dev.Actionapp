@@ -7,8 +7,8 @@ class Projet < ApplicationRecord
   has_one_attached :heroImg
 
   STATUS= ["Encours", "Approver", "La lune", "Archive"]
-  validates :title, :content, :start_date, :amount, presence: true
-  validates :title, :content, length: { minimum:5}
+  validates :title, :content, :published, :amount, presence: true
+  validates :title, :content, length: { minimum:20}
 
 
   ################## SLUG ###############

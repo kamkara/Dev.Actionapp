@@ -23,13 +23,15 @@ class DashboardController < ApplicationController
   end
     
   def campagnes
-    @Campagnes = Campagne.all.order('created_at desc')
+    @Campagnes = Campagne.dashboard
     @CampMonthly = @Campagnes.monthlyActif
     @CampWeekly = @CampMonthly.weeklyActif
   end
 
   def projets
-    
+    @Projets = Projet.dashboard
+    @ProjetsMonthly = @Projets.monthlyActif
+    @ProjetsWeekly = @ProjetsMonthly.weeklyActif
   end
 
   def bememberships

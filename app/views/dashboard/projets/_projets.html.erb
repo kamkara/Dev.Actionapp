@@ -1,0 +1,35 @@
+<% @title="Liste des articles" %>
+<!-- component -->
+<div class="row row-cols-1 row-cols-md-2 g-4 chefs">
+    <% @Projets.each do |projet| %>
+        <div class="col-lg-4 col-md-6 rounded-md bg-white m-2">
+            <div class="border p-2 ">
+
+                <% if projet.heroImg.attached? %>
+                    <%= image_tag(projet.heroImg, class:"w-full h-50") %>
+                <% else %>
+                    <p class="">Pas d'image de couverture</p>
+                <% end %>
+                <div class="p-3">
+                    <span class="text-sm text-primary"><%= projet.published %></span>
+                    <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
+                        <%= projet.title %>
+                    </h3>
+                    <p class="paragraph-normal text-gray-600">
+                        <%= link_to article_path(projet), class:"hover:text-black text-black no-underline" do %>
+                            <%= truncate(strip_tags(projet.content.to_s.html_safe), length: 600) %>
+                            <span class="bg-blue-300" id="start-reading">
+                                <i class="mx-2">Lire plus >>
+                                </i>
+                            </span>
+                        <% end %>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+    <% end %>
+</div>
+
