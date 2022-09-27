@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   get "mot-fondateur", to:"founders#index"
 
-  get "display-articles", to:"articles#articles_lists"
+  get "action-actualité", to:"articles#articles_lists"
   get "agisons-ensemble", to:"involved#index"
 
 
