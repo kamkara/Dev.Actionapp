@@ -87,7 +87,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_26_190524) do
   create_table "campagnes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
     t.string "amount"
-    t.date "start_date"
+    t.string "status"
+    t.date "published"
     t.string "heroImg"
     t.string "slug"
     t.uuid "user_id", null: false

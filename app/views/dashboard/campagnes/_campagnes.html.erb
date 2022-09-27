@@ -1,0 +1,36 @@
+<% @title="Liste des campagnes" %>
+<!-- component -->
+
+<section class="h-screen w-screen bg-gradient-to-br from-pink-50 to-indigo-100 p-8">
+
+    <div class="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-2">
+        <!-- Card 1 -->
+        <% @Campagnes.each do |camp| %>
+            <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
+                <% if camp.heroImg.attached? %>
+                    <%= image_tag(camp.heroImg, class:"w-full") %>
+                <% else %>
+                    <p class="">Pas d'image de couverture</p>
+                <% end %>
+
+
+                <div class="p-3">
+                    <span class="text-sm text-primary"><%= camp.published %></span>
+                    <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
+                        <%= camp.title %>
+                    </h3>
+                    <p class="paragraph-normal text-gray-600">
+                        <%= link_to campagne_path(camp), class:"hover:text-black text-black no-underline" do %>
+                            <%= truncate(strip_tags(camp.content.to_s.html_safe), length: 600) %>
+                            <span class="bg-blue-300" id="start-reading">
+                                <i class="mx-2">Lire plus >>
+                                </i>
+                            </span>
+                        <% end %>
+                    </p>
+                </div>
+            </div>
+        <% end %>
+
+    </div>
+</section>

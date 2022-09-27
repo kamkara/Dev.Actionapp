@@ -9,7 +9,7 @@ class Campagne < ApplicationRecord
 
 
   STATUS= ["Encours", "Approver", "La lune", "Archive" ]
-  validates :title, :content, :start_date, :amount, presence: true
+  validates :title, :content, :published, :amount, presence: true
   #validates_comparison_of :start_date, greater_than: -> { Date.today }
   validates :title, :content, length: { minimum:5}
 

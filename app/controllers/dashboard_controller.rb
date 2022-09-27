@@ -2,22 +2,30 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @MembersList = User.all#Bemembership.all.order('created_at desc')
-    @ProjetsList = User.all#Projet.all
-    @CampagnesList = User.all#Campagne.all
+    @MembersList = Bemembership.dashboard
+    @ProjetsList = Projet.dashboard
+    @CampagnesList = Campagne.dashboard
   end
 
   def home
   end
 
   def members
-    @MembersList = Bemembership.all.order('created_at desc')
+    @MembersList = Bemembership.dashboard
     @MembersMonthly = @MembersList.monthlyActif
     @MembersWeekly = @MembersMonthly.weeklyActif
   end
 
-  def campagnes
+  def articles
+    @Articles = Article.dashboard
+    @ArticlesMonthly = @Articles.monthlyActif
+    @ArticlesWeekly = @ArticlesMonthly.weeklyActif
+  end
     
+  def campagnes
+    @Campagnes = Campagne.all.order('created_at desc')
+    @CampMonthly = @Campagnes.monthlyActif
+    @CampWeekly = @CampMonthly.weeklyActif
   end
 
   def projets

@@ -8,11 +8,15 @@ Rails.application.routes.draw do
   
   get "mot-fondateur", to:"founders#index"
 
-  get "display-articles", to:"articles#articles_lists"
   get "agisons-ensemble", to:"involved#index"
 
 
   
+  ##### ARTICLES ######
+  get "new-article", to:"articles#new"
+  get "nos-articles", to:"articles#index"
+
+
   ##### CAMPAGNES ######
   get "new-campagne", to:"campagnes#new"
   get "nos-campagnes-financements", to:"campagnes#index"
@@ -33,6 +37,7 @@ Rails.application.routes.draw do
   get "dashboard", to:'dashboard#index'
   get "dashboard-setup", to:"dashboard#home"
   get "dashboard-membres", to:"dashboard#members"
+  get "dashboard-articles", to:"dashboard#articles"
   get "dashboard-campagnes", to:"dashboard#campagnes"
   get "dashboard-projets", to:"dashboard#projets"
   get "dashboard-adhesions", to:"dashboard#bememberships"

@@ -5,8 +5,6 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     @articles = Article.all.order('created_at desc')
-    @articlesMonthly = @articles.monthlyActif
-    @articlesWeekly = @articlesMonthly.weeklyActif
   end
 
   def articles_lists
