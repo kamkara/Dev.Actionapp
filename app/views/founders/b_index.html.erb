@@ -1,0 +1,32 @@
+
+<% @title="Mot du fondateur" %>
+<div
+    class="mb-40">
+    <!-- Header -->
+    <%= render "welcome/shared/top_bar" %>
+    <%= render "welcome/shared/header" %>
+</div>
+<div class="w-full">
+    <div class="mx-14">
+        <h1 class="font-bold text-3xl ">Lorem  sit amet amet consectetur adipisicing  corporis rerum!</h1>
+
+        <div class="mx-20 bg-gray-100 my-14">
+            <p class="p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ullam porro expedita explicabo facilis placeat earum! Iste deserunt et quis impedit quaerat iusto, cum hic dolores non labore, assumenda repellendus.</p>
+        </div>
+    </div>
+</div>
+<div class="">
+    <% @founders.each do |founder_message| %>
+        <div class="border p-2">
+            <h2 class="font-bold my-4 text-xl md:text-2xl">
+                <%= founder_message.title %>
+            </h2>
+            <div class="my-4 border p-2">
+                <%= founder_message.content %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<%= render "welcome/shared/footer" %>
+

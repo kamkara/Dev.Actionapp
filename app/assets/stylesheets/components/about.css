@@ -91,9 +91,6 @@
     /*color: #cda45e;*/
 }
 
-.about .content p:last-child {
-    margin-bottom: 0;
-}
 
 @media (min-width: 1024px) {
     .about {

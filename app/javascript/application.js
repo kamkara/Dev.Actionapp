@@ -6,3 +6,4 @@ import * as bootstrap from "bootstrap"
 // actionText install
 import "trix"
 import "@rails/actiontext"
+import "./main";
