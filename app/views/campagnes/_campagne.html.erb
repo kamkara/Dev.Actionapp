@@ -153,18 +153,23 @@
                     "
                   >
                     <h3 class="font-semibold text-white mb-2 text-2xl">
-                      Fait un don
+                      Nous Soutenir
                     </h3>
                     <p class="text-base text-white mb-8">
-                      Votre Don sera entierement utilisé pour financer d'autres projets.
+                      Votre Don sera entierement utilisé pour financer le projet.
                     </p>
+                        <div class=" bg-green-400 w-full text-center text-sm font-bold
+                         text-white rounded mb-6 p-2 text-xl">
+                            Montant: $ <%= campagne.amount %>
+                          </div>
+
+                      
                     <button type="button" class="btn-book animated fadeInUp 
                           scrollto text-white bg-red-500 hover:bg-red-400 focus:outline
                           focus:ring-4 focus:ring-red-300 font-bold rounded-b-xl rounded-tr-xl text-xl px-5
                             py-2.5 text-center mr-2 mb-2 uppercase" data-bs-toggle="modal" data-bs-target="#action-staticBackdrop">
-                                    fait un don
+                                    Donner 
                   </button>
-                      <%= link_to "Adherer", adhesion_path, class:" bg-green-400 w-full text-center h-[50px] text-sm font-medium text-white rounded mb-6 px-4 py-2 cursor-pointer hover:shadow-lg hover:bg-opacity-90 transition duration-300 ease-in-out" %>
                     </form>
                     
 
@@ -565,9 +570,4 @@
       </div>
     </section>
       </div>
-    <!-- ====== Blog Details Section End -->
-  <!-- footer -->
-<%= render "welcome/shared/footer" %>
-<!-- preloader -->
-<%= render "welcome/shared/preloader" %>
-
+   
