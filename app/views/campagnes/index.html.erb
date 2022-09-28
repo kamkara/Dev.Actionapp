@@ -5,7 +5,7 @@
         <%= render "welcome/shared/header" %>
     </div>
     <div class="w-full">
-        <div class="mx-14">
+        <div class="md:mx-14">
             <h1 class="font-bold text-3xl ">Lorem  sit amet amet consectetur adipisicing  corporis rerum!</h1>
 
             <div class="mx-20 bg-gray-100 my-14">
@@ -13,13 +13,8 @@
             </div>
         </div>
     </div>
-    <div class="">
-        <% @campagnes.each do |campagne| %>
-            <div class="border p-2">
-                <h2 class="font-bold my-4 text-xl md:text-2xl"> <%= campagne.title %> </h2>
-                <div class="my-4 border p-2"> <%= campagne.content %> </div>
-            </div>
-        <% end %>
+    <div class="" id="campagnes"                                                                                                                                                                                                                                                                                                                                                                                                                                                                >
+        <%= render @campagnes %>
     </div>
 
 <%= render "welcome/shared/footer" %>
