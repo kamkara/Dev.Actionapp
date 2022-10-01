@@ -7,18 +7,18 @@ Rails.application.routes.draw do
   resources :campagnes
   resources :bememberships
   
-  get "mot-fondateur", to:"founders#index"
-
+  
   get "agisons-ensemble", to:"involved#index"
-
-
+  
+  #Founder
+  get "mot-fondateur", to:"founders#index"
   
   ##### ARTICLES ######
   get "new-article", to:"articles#new"
   get "nos-articles", to:"articles#index"
 
 
-  ##### CAMPAGNES ######
+  ##### BENEVOLS ######
   get "new-benevol", to:"benevols#new"
   get "nos-benevols", to:"benevols#index"
 
