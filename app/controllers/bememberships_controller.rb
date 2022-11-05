@@ -4,6 +4,14 @@ class BemembershipsController < ApplicationController
   # GET /bememberships or /bememberships.json
   def index
     @bememberships = Bemembership.all
+    respond_to do |format|
+    format.xlsx {
+      response.headers[
+        'Content-Disposition'
+      ] = "attachment; filename=Adhesion.xlsx"
+    }
+    format.html { render :index }
+  end
   end
 
   # GET /bememberships/1 or /bememberships/1.json

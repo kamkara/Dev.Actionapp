@@ -1,0 +1,17 @@
+wb = xlsx_package.workbook
+
+
+
+wb.styles do |style|
+  project_heading = style.add_style(b: true, sz: 14)
+  heading = style.add_style(b: true)
+
+    wb.add_worksheet(name: "adhesion") do |sheet|
+        # Create the header row
+        sheet.add_row ["Nom", "Prénoms", "Pays Resident", "Nationnalité", "Ville", "Contact", "Genre"], style: project_heading
+        # Create entries for each item
+        @bememberships.each do |item|
+            sheet.add_row [item.first_name, item.last_name, item.country, item.nationality, item.citytown, item.contact, item.gender]
+        end
+    end
+end

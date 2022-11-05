@@ -7,6 +7,9 @@ gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 #gem 'heroicon', '~> 1.0'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
+########### Export  ########
+gem 'caxlsx'
+gem 'caxlsx_rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
