@@ -27,7 +27,7 @@ class BenevolsController < ApplicationController
 
     respond_to do |format|
       if @benevol.save
-        format.html { redirect_to benevol_url(@benevol), notice: "Benevol was successfully created." }
+        format.html { redirect_to benevol_url(@benevol), notice: "Nouveau Bénévole Ajouté avec succes." }
         format.json { render :show, status: :created, location: @benevol }
       else
         format.html { render :new, status: :unprocessable_entity }

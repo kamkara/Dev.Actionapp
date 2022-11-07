@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :abouts
   has_many :projets
   has_many :campagnes
+  has_many :benevols
   #has_many :blogs
   #has_many :legals
   #has_many :privates
