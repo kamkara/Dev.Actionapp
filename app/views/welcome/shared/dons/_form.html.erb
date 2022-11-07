@@ -1,22 +1,21 @@
            <!-- component -->
 <!-- This is an example component -->
 
-	<div >
-		<h2 class="uppercase font-bold accordion-button collapsed relative flex 
-      items-center w-full p-4 text-base text-white text-left bg-red-500 ">
-      <span>Faire un don</span>
-		</h2>
-		<div class="" >
-			<div class=" p-2 border border-gray-200">
+	<div>
+	
+    <form action="">
+      
+			<div class="p-2 border border-gray-200">
         <div class="flex mt-2">
           <div class="">
-            <input id="name" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 
-                  font-normal h-10  text-sm border-gray-300 rounded border" placeholder="Nom Complet :" />
+            <input type="text" id="name" class="p-2 text-gray-600 border focus:outline focus:outline-blue-500  font-normal text-sm rounded"
+             placeholder="Nom Complet :" />
           </div>
-                
-          <div class=" ml-2">
-            <input id="email2" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center text-sm border-gray-300 rounded border" placeholder="XXXX - XXXX - XXXX - XXXX" />
-          </div>
+            <input type="text" id="nb_carte" class="p-2 text-gray-600 border focus:outline focus:outline-blue-500  font-normal text-sm rounded"
+             placeholder="xxx xxx xxx xxx" />
+         
+
+
         </div>
           <div class="flex my-2">
             <div class="relative">
@@ -31,7 +30,7 @@
             </div>
           </div>
               
-          <div class="relative mb-2">
+          <div class="relative mb-2 text-xl">
             <label class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Montant du Don</label><hr class="mb-3">
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -67,7 +66,6 @@
           </button>
         </div>           
       </div>
-		</div>
-	</div>	
+		</form>	
 </div>
 	
