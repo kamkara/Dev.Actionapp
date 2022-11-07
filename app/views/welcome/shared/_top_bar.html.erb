@@ -1,16 +1,35 @@
  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="flex justify-around fixed-top">
+  <div id="topbar" class="flex justify-end mr-0 md:mr-20 fixed-top text-sm">
     <div class="flex">
       <div class="contact-info flex align-items-center">
         <button type="button" data-modal-toggle="donnez-modal" class="text-gray-900 bg-white font-medium rounded-lg text-sm  text-center inline-flex items-center">
           <i class="bi bi-phone d-flex align-items-center ">Donnez</i>
         </button>
       </div>
-      <div class="contact-info flex align-items-center">
-        <i class="bi bi-clock d-flex align-items-center ms-4 ">
-          <li><%= link_to 'Se connecter', "action-plus-sign-in", class:"font-bold" %></li>
+      <div class="flex sm:mx-2 md:mx-4">
+        <i class=" bi bi-unlock d-flex align-items-end">
+          <%= link_to 'Se connecter', "action-plus-sign-in", class:"text-sm font-medium" %>
         </i>
       </div>
+      <div class="social flex sm:mx-2 md:mx-4">
+          <a href="#">
+              <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#">
+              <i class="bi bi-instagram sm:mx-2 md:mx-4"></i>
+          </a>
+          <a href="#">
+              <i class="bi bi-twitter"></i>
+          </a>
+
+          <a href="#">
+              <i class="bi bi-linkedin sm:mx-2 md:mx-4"></i>
+          </a>
+          <a href="#">
+              <i class="bi bi-youtube"></i>
+          </a>
+      </div>
+
     </div>
   </div>
 
