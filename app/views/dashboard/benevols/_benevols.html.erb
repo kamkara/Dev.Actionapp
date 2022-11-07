@@ -10,9 +10,8 @@
                 <% end %>
                 <div class="member-info">
                     <div class="member-info-content">
-                        <h4><%= bl.full_name %></h4>
-                        <span><%= bl.role %>
-                        </span>
+                        <h4><%= bl.full_name %> - <%= link_to 'Voir profil', benevol_path(bl) %> </h4>
+                        <span><%= bl.role %> </span>
                     </div>
                     <div class="social">
                         <a href="<%= bl.link_tw %>">
