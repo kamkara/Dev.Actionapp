@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   
   ##### USER ######
    devise_scope :user do
+    get 'action-plus-sign-up-member', to:'bememberships#users' #Member's Account
     get 'action-plus-sign-in', to: 'devise/sessions#new'
     get 'action-plus-sign-up', to: 'devise/registrations#new', as: "new_user_registration"
     get 'profile/edit'    => 'devise/registrations#edit'
