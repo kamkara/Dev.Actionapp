@@ -13,6 +13,13 @@ Rails.application.routes.draw do
   #Founder
   get "mot-fondateur", to:"founders#index"
   
+  ##### ACTIONS PLUS ITEMS ######
+  get "action-plus-eau-potable", to:'action_item#itemA'
+  get "action-plus-electricite", to:'action_item#itemB'
+  get "action-plus-education", to:'action_item#itemC'
+  
+
+  
   ##### ARTICLES ######
   get "new-article", to:"articles#new"
   get "nos-articles", to:"articles#index"
