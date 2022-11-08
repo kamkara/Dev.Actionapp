@@ -1,11 +1,15 @@
 <!-- Top Bar -->
 <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-cente bg-white py-2 uppercase text-4xl">
+  <header id="header" class="fixed-top d-flex align-items-cente bg-white pt-4 pb-2 uppercase text-4xl">
 <%= render "welcome/shared/top_bar" %>
   
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-      <h1 class="logo me-auto me-lg-0">
-        <%= link_to root_path do %> <%= image_tag 'logo/logo-action.png', alt:"logo action+", class:"bg-gray-100 h-12 w-10 rounded-full " %><% end %>
+    <div class="flex justify-between mx-auto ">
+      <h1 class="logo">
+        <%= link_to root_path do %> 
+          <%= image_tag 'logo/logo-action.png', alt:"logo action+", 
+class:"h-14 w-14 mr-14 ml-6 rounded-full" %>
+
+        <% end %>
       </h1>
       <nav id="navbar" class="navbar order-last order-lg-0 font-semibold">
       
@@ -26,7 +30,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
      
-      <%= link_to  adhesion_path, class:"btn-book animated fadeInUp 
+      <%= link_to  adhesion_path, class:"btn-book ml-6 animated fadeInUp 
             text-white bg-red-500 hover:bg-red-400 focus:outline
               focus:ring-red-300 font-bold rounded-b-xl rounded-tr-xl text-xl px-5
               py-2.5 text-center mr-2 mb-2" do %>
