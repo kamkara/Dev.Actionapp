@@ -5,6 +5,7 @@ class DashboardController < ApplicationController
     @MembersList = Bemembership.dashboard
     @ProjetsList = Projet.dashboard
     @CampagnesList = Campagne.dashboard
+    @LastSigned = User.lastSigned
   end
 
   def home
@@ -41,6 +42,7 @@ class DashboardController < ApplicationController
     @Benevols = Benevol.dashboard
     @BenevolsMonthly = @Benevols.monthlyActif
     @BenevolsWeekly = @BenevolsMonthly.weeklyActif
+
   end
 
 end

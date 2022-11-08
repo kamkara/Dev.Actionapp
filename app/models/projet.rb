@@ -6,7 +6,7 @@ class Projet < ApplicationRecord
   #Projet.all.with_rich_text_content_and_embeds # Preload both body and attachments.
   has_one_attached :heroImg
 
-  STATUS= ["Encours", "Approver", "La lune", "Archive"]
+  STATUS= ["Encours", "Approver", "La une", "Archive"]
   validates :title, :content, :published, :amount, presence: true
   validates :title, :content, length: { minimum:20}
 

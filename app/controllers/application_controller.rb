@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
     protected
     # If you have extra params to permit, append them to the sanitizer.
         def configure_permitted_parameters
-            sign_up_params = [ :first_name, :last_name, :full_name,
+            sign_up_params = [ :first_name, :last_name, :full_name, :category,
                                 :user_status, :country, :email, :newletter, :terms, :avatar,
-                                :password, :password_confirmation, :slug, :gender, :full_contact, :category]
+                                :password, :password_confirmation, :slug, :gender, :full_contact]
             
             #Devise strong Params
             devise_parameter_sanitizer.permit :sign_up, keys: sign_up_params

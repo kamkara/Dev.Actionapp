@@ -3,5 +3,5 @@ class Benevol < ApplicationRecord
 
 
     has_one_attached :img
-    STATUS= ["A la une", "Actif", "Bénévole","inactif"]
+    STATUS= ["La une", "Actif", "Bénévole","inactif"]
 end

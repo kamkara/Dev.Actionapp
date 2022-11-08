@@ -15,6 +15,7 @@ class User < ApplicationRecord
   #has_many :legals
   #has_many :privates
   has_one_attached :avatar
+  
 
   def full_name
     "#{self.first_name} #{self.last_name}" 
