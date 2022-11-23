@@ -8,10 +8,10 @@ wb.styles do |style|
 
     wb.add_worksheet(name: "adhesion") do |sheet|
         # Create the header row
-        sheet.add_row ["Nom", "Prénoms", "Pays Resident", "Nationnalité", "Ville", "Contact", "Genre"], style: project_heading
+        sheet.add_row ["Profil","Nom", "Prénoms", "Pays Resident", "Nationnalité", "profession", "Ville", "Contact", "Genre"], style: project_heading
         # Create entries for each item
         @bememberships.each do |item|
-            sheet.add_row [item.first_name, item.last_name, item.country, item.nationality, item.citytown, item.contact, item.gender]
+            sheet.add_row [item.avatar, item.first_name, item.last_name, item.country, item.nationality, item.profession, item.citytown, item.contact, item.gender]
         end
     end
 end
