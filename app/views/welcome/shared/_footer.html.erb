@@ -4,54 +4,48 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-md-4 col-md-">
             <div class="footer-info">
               <h3>Action<sup>+</sup></h3>
-              <p>
-                Abidjan, Cocody XX <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +225 0700 4500 00<br>
-                <strong>Email:</strong> actionplus@example.com<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
+              <% if !@media.blank? %>
+                <% @media.each do |url| %>
+                  <p>
+                    Adresse: <%= url.adresse_action %><br><br>
+                    <strong>Contact:</strong> <%= url.email_action %><br>
+                    <strong>Email:</strong> <%= url.email_action %><br>
+                  </p>
+                <div class="social-links mt-3">
+                    <a href="<%= url.facebook %>" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="<%= url.twitter %>" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="<%= url.instagram %>" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="<%= url.linkedin %>" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    <a href="<%= url.youtube %>" class="youtube"><i class="bx bxl-youtube"></i></a>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
+          <div class="col-md-4 footer-links">
             <h4>Liens utiles</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Accueil</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Nous découvrir</a></li>
-              <li><i class="bx bx-chevron-right"></i> <%#= link_to "Nos Agissons ensemble", agir_path %></li>
-              <li><i class="bx bx-chevron-right"></i> <%= link_to "Conditions d'utilisation", "charte" %></li>
-              <li><i class="bx bx-chevron-right"></i> <%= link_to "Politique de confidentialité", "vie-privée" %></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<%= root_path %>">Accueil</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/mot-fondateur">Nous découvrir</a></li>
+              <li><i class="bx bx-chevron-right"></i> <%= link_to "Nos Agissons ensemble", "/agisons-ensemble" %></li>
+              <li><i class="bx bx-chevron-right"></i> <%= link_to "Conditions  generale d'utilisation", "/conditions-generale-utilisation" %></li>
+              <li><i class="bx bx-chevron-right"></i> <%= link_to "Politique de confidentialité", "/protection-donnees" %></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-md-4 footer-links">
             <h4>Champs d'Action<sup>+</sup></h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Contre la faim</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Education</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Electrification</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="action-plus-eau-potable">Eau Potable</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="action-plus-electricite">Eléctrité</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="action-plus-education">Education</a></li>
               
             </ul>
           </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Notre Newsletter</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.aboriosam!</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="S'inscrire">
-            </form>
-
-          </div>
-
         </div>
       </div>
     </div>

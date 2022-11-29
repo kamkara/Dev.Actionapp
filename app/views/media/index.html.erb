@@ -1,0 +1,70 @@
+<% @title="Condition generale utilisation" %>
+<!-- Header -->
+<%= render "welcome/shared/header" %>
+
+
+<div id="privacies" class="mt-32">
+    <div>
+        <% if @media.empty? %>
+            <%= turbo_frame_tag :url_form do %>
+            <%= link_to "Rediger article", "article-media", class:"bg-blue-600 text-white font-bold rounded-md  py-3 px-2" %>
+            <div class="mx-auto md:w-2/3 w-full ">
+                <h3 class="font-semibold">
+                    Les Urls seront disponbles bientot</h3>
+            </div>
+
+            <% end %>
+        <% end %>
+        <% @media.each do |medium| %>
+
+            <div class="mx-auto md:w-2/3 w-full my-20 social">
+                <div class="text-md border p-2">
+                  Adresse: <%= medium.adresse_action %> - Email: <%= medium.email_action %> - N° Tel: <%= medium.phone_action %>                   
+                </div>
+                <div class="text-md border p-2">
+                    Page Facebook
+                    <a href="<%= medium.facebook %>">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                </div>
+                <div class="text-md border p-2">
+                    Page Twitter
+                     <a href="<%= medium.twitter %>">
+                       <i class="bi bi-twitter"></i>
+                    </a>
+                </div>
+                <div class="text-md border p-2">
+                    Page Instagram
+                    <a href="<%= medium.instagram %>">
+                        <i class="bi bi-instagram mx-2 md:mx-4"></i>
+                    </a>
+                </div>
+                <div class="border p-2 text-md">
+                   Chaine Youtube
+                    <a href="<%= medium.youtube %>">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                </div>
+                <div class="text-md border p-2">
+                    Page linkedin
+                    <a href="<%= medium.linkedin %>">
+                        <i class="bi bi-linkedin mx-2 md:mx-4"></i>
+                    </a>                   
+                </div>
+
+                <% if user_signed_in? %>
+                    <%= turbo_frame_tag :edit_url do %>
+                        <div class="flex w-33 mt-2">
+                            <%= link_to "Editer Url", edit_medium_path(medium), class:"bg-blue-600 font-bold p-2 text-white rounded-md" %>
+                            |<%= button_to "Supprimer Url", medium, method: :delete, class:"bg-red-600 font-bold p-2 text-white rounded-md" %>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+
+        </div>
+
+
+    <% end %>
+</div>
+

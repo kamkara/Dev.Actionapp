@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :media
   resources :statuses
   resources :cultures
   resources :privacies
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
     get "article-chart", to:"charts#new"
     get "fonctionnement-action-plus", to:"cultures#index"
     get "article-fonctionnement", to:"cultures#new"
+    get "medias-action-plus", to:"media#index"
+    get "article-media", to:"media#new"
   
     resources :articles
   resources :founders

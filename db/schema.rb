@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_114914) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_194320) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -149,6 +149,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_114914) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "media", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "facebook"
+    t.string "youtube"
+    t.string "twitter"
+    t.string "instagram"
+    t.string "linkedin"
+    t.string "email_action"
+    t.string "adresse_action"
+    t.string "phone_action"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "privacies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.string "slug"
@@ -169,15 +182,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_114914) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projets_on_user_id"
-  end
-
-  create_table "statuses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name"
-    t.string "slug"
-    t.uuid "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_statuses_on_user_id"
   end
 
   create_table "terms", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -227,6 +231,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_114914) do
   add_foreign_key "founders", "users"
   add_foreign_key "privacies", "users"
   add_foreign_key "projets", "users"
-  add_foreign_key "statuses", "users"
   add_foreign_key "terms", "users"
 end

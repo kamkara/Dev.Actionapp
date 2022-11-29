@@ -1,5 +1,5 @@
 class CulturesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[index]
   before_action :set_culture, only: %i[ show edit update destroy ]
 
   # GET /cultures or /cultures.json

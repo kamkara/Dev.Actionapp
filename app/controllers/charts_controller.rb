@@ -1,5 +1,5 @@
 class ChartsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[index]
   before_action :set_chart, only: %i[ show edit update destroy ]
 
   # GET /charts or /charts.json

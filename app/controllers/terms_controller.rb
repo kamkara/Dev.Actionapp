@@ -1,5 +1,5 @@
 class TermsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[index]
   before_action :set_term, only: %i[ show edit update destroy ]
 
   # GET /terms or /terms.json

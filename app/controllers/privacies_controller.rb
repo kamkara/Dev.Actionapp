@@ -1,5 +1,5 @@
 class PrivaciesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[index]
   before_action :set_privacy, only: %i[ show edit update destroy ]
 
   # GET /privacies or /privacies.json
