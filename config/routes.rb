@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   ######################################"
     get "protection-donnees", to:"privacies#index"
     get "article-privacy", to:"privacies#new"
+    get "conditions-generale-utilisation", to:"terms#index"
+    get "article-term", to:"terms#new"
+    get "charte-action-plus", to:"charts#index"
+    get "article-chart", to:"charts#new"
+    get "culture-action-plus", to:"cultures#index"
+    get "article-culture", to:"cultures#new"
   
     resources :articles
   resources :founders

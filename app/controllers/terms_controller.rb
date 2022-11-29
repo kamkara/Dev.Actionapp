@@ -1,4 +1,5 @@
 class TermsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_term, only: %i[ show edit update destroy ]
 
   # GET /terms or /terms.json
@@ -21,11 +22,11 @@ class TermsController < ApplicationController
 
   # POST /terms or /terms.json
   def create
-    @term = Term.new(term_params)
+    @term = current_user.terms.build(term_params)
 
     respond_to do |format|
       if @term.save
-        format.html { redirect_to term_url(@term), notice: "Term was successfully created." }
+        format.html { redirect_to "/conditions-generale-utilisation", notice: "Term was successfully created." }
         format.json { render :show, status: :created, location: @term }
       else
         format.html { render :new, status: :unprocessable_entity }

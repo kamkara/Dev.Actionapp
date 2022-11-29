@@ -1,4 +1,5 @@
 class ChartsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_chart, only: %i[ show edit update destroy ]
 
   # GET /charts or /charts.json
@@ -21,11 +22,11 @@ class ChartsController < ApplicationController
 
   # POST /charts or /charts.json
   def create
-    @chart = Chart.new(chart_params)
+    @chart = current_user.charts.build(chart_params)
 
     respond_to do |format|
       if @chart.save
-        format.html { redirect_to chart_url(@chart), notice: "Chart was successfully created." }
+        format.html { redirect_to "/charte-action-plus", notice: "Chart was successfully created." }
         format.json { render :show, status: :created, location: @chart }
       else
         format.html { render :new, status: :unprocessable_entity }

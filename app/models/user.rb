@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
 
   has_many :privacies
+  has_many :terms
+  has_many :charts
   has_many :posts
   has_many :articles
   has_many :abouts
