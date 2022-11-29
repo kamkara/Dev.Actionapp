@@ -1,4 +1,5 @@
 class CulturesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_culture, only: %i[ show edit update destroy ]
 
   # GET /cultures or /cultures.json
@@ -21,11 +22,11 @@ class CulturesController < ApplicationController
 
   # POST /cultures or /cultures.json
   def create
-    @culture = Culture.new(culture_params)
+    @culture = current_user.cultures.build(culture_params)
 
     respond_to do |format|
       if @culture.save
-        format.html { redirect_to culture_url(@culture), notice: "Culture was successfully created." }
+        format.html { redirect_to "/fonctionnement-action-plus", notice: "Culture was successfully created." }
         format.json { render :show, status: :created, location: @culture }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class CulturesController < ApplicationController
   def update
     respond_to do |format|
       if @culture.update(culture_params)
-        format.html { redirect_to culture_url(@culture), notice: "Culture was successfully updated." }
+        format.html { redirect_to "/fonctionnement-action-plus", notice: "Culture was successfully updated." }
         format.json { render :show, status: :ok, location: @culture }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +53,7 @@ class CulturesController < ApplicationController
     @culture.destroy
 
     respond_to do |format|
-      format.html { redirect_to cultures_url, notice: "Culture was successfully destroyed." }
+      format.html { redirect_to "/fonctionnement-action-plus", notice: "Culture was successfully destroyed." }
       format.json { head :no_content }
     end
   end

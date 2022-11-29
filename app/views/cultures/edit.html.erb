@@ -1,10 +1,10 @@
-<h1>Editing culture</h1>
+<% @title="Fonctionnement Action +" %>
+<!-- Header -->
+<%= render "welcome/shared/header" %>
 
-<%= render "form", culture: @culture %>
 
-<br>
-
-<div>
-  <%= link_to "Show this culture", @culture %> |
-  <%= link_to "Back to cultures", cultures_path %>
+<div class="mx-auto md:w-2/3 w-full mt-40">
+    <h1 class="font-bold text-4xl my-4">Editer article</h1>
+    <%= render "form", culture: @culture %>
 </div>
+

@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     get "article-term", to:"terms#new"
     get "charte-action-plus", to:"charts#index"
     get "article-chart", to:"charts#new"
-    get "culture-action-plus", to:"cultures#index"
-    get "article-culture", to:"cultures#new"
+    get "fonctionnement-action-plus", to:"cultures#index"
+    get "article-fonctionnement", to:"cultures#new"
   
     resources :articles
   resources :founders

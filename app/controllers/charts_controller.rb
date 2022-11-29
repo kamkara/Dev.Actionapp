@@ -39,7 +39,7 @@ class ChartsController < ApplicationController
   def update
     respond_to do |format|
       if @chart.update(chart_params)
-        format.html { redirect_to chart_url(@chart), notice: "Chart was successfully updated." }
+        format.html { redirect_to "/charte-action-plus", notice: "Chart was successfully updated." }
         format.json { render :show, status: :ok, location: @chart }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class ChartsController < ApplicationController
     @chart.destroy
 
     respond_to do |format|
-      format.html { redirect_to charts_url, notice: "Chart was successfully destroyed." }
+      format.html { redirect_to "/charte-action-plus", notice: "Chart was successfully destroyed." }
       format.json { head :no_content }
     end
   end

@@ -39,7 +39,7 @@ class TermsController < ApplicationController
   def update
     respond_to do |format|
       if @term.update(term_params)
-        format.html { redirect_to term_url(@term), notice: "Term was successfully updated." }
+        format.html { redirect_to "/conditions-generale-utilisation", notice: "Term was successfully updated." }
         format.json { render :show, status: :ok, location: @term }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class TermsController < ApplicationController
     @term.destroy
 
     respond_to do |format|
-      format.html { redirect_to terms_url, notice: "Term was successfully destroyed." }
+      format.html { redirect_to "/conditions-generale-utilisation", notice: "Term was successfully destroyed." }
       format.json { head :no_content }
     end
   end

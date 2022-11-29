@@ -39,7 +39,7 @@ class PrivaciesController < ApplicationController
   def update
     respond_to do |format|
       if @privacy.update(privacy_params)
-        format.html { redirect_to privacy_url(@privacy), notice: "Privacy was successfully updated." }
+        format.html { redirect_to "/protection-donnees", notice: "Privacy was successfully updated." }
         format.json { render :show, status: :ok, location: @privacy }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class PrivaciesController < ApplicationController
     @privacy.destroy
 
     respond_to do |format|
-      format.html { redirect_to privacies_url, notice: "Privacy was successfully destroyed." }
+      format.html { redirect_to "/protection-donnees", notice: "Privacy was successfully destroyed." }
       format.json { head :no_content }
     end
   end
