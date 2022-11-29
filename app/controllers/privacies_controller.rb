@@ -1,4 +1,5 @@
 class PrivaciesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_privacy, only: %i[ show edit update destroy ]
 
   # GET /privacies or /privacies.json
@@ -21,11 +22,11 @@ class PrivaciesController < ApplicationController
 
   # POST /privacies or /privacies.json
   def create
-    @privacy = Privacy.new(privacy_params)
+    @privacy = current_user.privacies.build(privacy_params)
 
     respond_to do |format|
       if @privacy.save
-        format.html { redirect_to privacy_url(@privacy), notice: "Privacy was successfully created." }
+        format.html { redirect_to "/protection-donnees", notice: "Privacy was successfully created." }
         format.json { render :show, status: :created, location: @privacy }
       else
         format.html { render :new, status: :unprocessable_entity }

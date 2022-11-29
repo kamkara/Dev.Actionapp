@@ -1,14 +1,41 @@
-<p style="color: green"><%= notice %></p>
+<% @title="Protection des données" %>
+<!-- Header -->
+<%= render "welcome/shared/header" %>
 
-<h1>Privacies</h1>
 
-<div id="privacies">
-  <% @privacies.each do |privacy| %>
-    <%= render privacy %>
-    <p>
-      <%= link_to "Show this privacy", privacy %>
-    </p>
+
+<div id="privacies" class="mt-32">
+<div>
+<% if @privacies.empty? %>
+<%= link_to "Rediger article", "article-privacy", class:"bg-blue-600 text-white font-bold rounded-md  py-3 px-2" %>
+<div class="mx-auto md:w-2/3 w-full ">
+    <h3 class="font-semibold"> L'article sera disponble bientot</h3>
+</div>
+
+<% end %>
+<% @privacies.principal.each do |privacy| %>
+
+    <div class="mx-auto md:w-2/3 w-full my-20">
+        <div class="my-4 font-bold text-xl">
+        <%= privacy.name %>
+        </div>
+        <div class="text-md border p-2">
+        <%= privacy.content %>
+        </div>
+
+<% if user_signed_in? %>
+<div class="flex w-33 mt-2">
+    <%= link_to "Editer Article", edit_privacy_path(privacy), class:"bg-blue-600 font-bold p-2 text-white rounded-md" %>
+|<%= button_to "Supprimer Article", privacy, method: :delete, class:"bg-red-600 font-bold p-2 text-white rounded-md" %>
+</div>
+
+</div><% end %>
+
+    </div>
+
+    
   <% end %>
 </div>
 
-<%= link_to "New privacy", new_privacy_path %>
+
+

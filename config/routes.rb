@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :benevols
   resources :projets
   ######################################"
-  
+    get "protection-donnees", to:"privacies#index"
+    get "article-privacy", to:"privacies#new"
   
     resources :articles
   resources :founders

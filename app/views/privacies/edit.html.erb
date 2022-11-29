@@ -1,10 +1,11 @@
-<h1>Editing privacy</h1>
 
-<%= render "form", privacy: @privacy %>
+<% @title="Protection des données" %>
+<!-- Header -->
+<%= render "welcome/shared/header" %>
 
-<br>
 
-<div>
-  <%= link_to "Show this privacy", @privacy %> |
-  <%= link_to "Back to privacies", privacies_path %>
+<div class="mx-auto md:w-2/3 w-full mt-40">
+    <h1 class="font-bold text-4xl my-4">Editer article</h1>
+    <%= render "form", privacy: @privacy %>
 </div>
+
