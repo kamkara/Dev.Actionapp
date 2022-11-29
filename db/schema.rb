@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_27_192304) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_114914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -111,6 +111,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_192304) do
     t.index ["user_id"], name: "index_campagnes_on_user_id"
   end
 
+  create_table "charts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_charts_on_user_id"
+  end
+
+  create_table "cultures", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cultures_on_user_id"
+  end
+
   create_table "founders", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
     t.uuid "user_id", null: false
@@ -131,6 +149,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_192304) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "privacies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_privacies_on_user_id"
+  end
+
   create_table "projets", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
     t.string "heroImg"
@@ -142,6 +169,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_192304) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projets_on_user_id"
+  end
+
+  create_table "statuses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_statuses_on_user_id"
+  end
+
+  create_table "terms", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_terms_on_user_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -177,6 +222,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_27_192304) do
   add_foreign_key "articles", "users"
   add_foreign_key "benevols", "users"
   add_foreign_key "campagnes", "users"
+  add_foreign_key "charts", "users"
+  add_foreign_key "cultures", "users"
   add_foreign_key "founders", "users"
+  add_foreign_key "privacies", "users"
   add_foreign_key "projets", "users"
+  add_foreign_key "statuses", "users"
+  add_foreign_key "terms", "users"
 end

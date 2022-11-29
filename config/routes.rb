@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  resources :statuses
+  resources :cultures
+  resources :privacies
+  resources :terms
+  resources :charts
   resources :benevols
   resources :projets
+  ######################################"
   
-  resources :articles
+  
+    resources :articles
   resources :founders
   resources :campagnes
   resources :bememberships
