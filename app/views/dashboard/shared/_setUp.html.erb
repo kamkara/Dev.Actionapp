@@ -4,9 +4,9 @@
      <h2 src="..." class="card-img-top h-40 bg-red-200" alt="..."> </h2>
       <div class="card-body">
       <div class="flex">
-        <h5 class="card-title font-bold">Soutenir Nos Actions</h5>
+        <h5 class="card-title font-bold">Page Accueil</h5>
         <button class="button button-icon button-pink" data-ripple-light="true">
-          <i class="material-icons">dashboard</i>
+          <i class="material-icons"></i>
         </button>
       </div>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -17,7 +17,7 @@
     <div class="card">
       <h2 src="..." class="card-img-top h-40 bg-red-200" alt="..."> </h2>
       <div class="card-body">
-        <h5 class="card-title">Section Fondateur</h5>
+        <h5 class="card-title">Mot du Fondateur</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
     </div>
@@ -26,7 +26,7 @@
     <div class="card">
       <h2 src="..." class="card-img-top h-40 bg-red-200" alt="..."> </h2>
       <div class="card-body">
-        <h5 class="card-title">Section Nous Aider</h5>
+        <h5 class="card-title">Page Remerciement Adhésion</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
       </div>
     </div>
@@ -35,7 +35,7 @@
     <div class="card">
       <h2 src="..." class="card-img-top h-40 bg-red-200" alt="..."> </h2>
       <div class="card-body">
-        <h5 class="card-title">Section Sur le Terrain</h5>
+        <h5 class="card-title"> Charte Action<sup>+</sup> </h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
     </div>
@@ -44,7 +44,7 @@
     <div class="card">
       <h2 src="..." class="card-img-top h-40 bg-red-200" alt="..."> </h2>
       <div class="card-body">
-        <h5 class="card-title">Section Projet</h5>
+        <h5 class="card-title">Status Action<sup>+</sup></h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
     </div>
@@ -53,10 +53,14 @@
     <div class="card">
       <h2 src="..." class="card-img-top h-40 bg-red-200" alt="..."> </h2>
       <div class="card-body">
-        <h5 class="card-title">Section Actualité</h5>
+        <h5 class="card-title"> protection données Action<sup>+</sup></h5>
         <div class="space-x-4 bg-gray-100 py-4 text-center">
-            <button class="inline-block rounded-md bg-red-500 px-10 py-2 font-semibold text-red-100 shadow-md duration-75 hover:bg-red-400">Cancel</button>
-            <button class="inline-block rounded-md bg-green-500 px-6 py-2 font-semibold text-green-100 shadow-md duration-75 hover:bg-green-400">Dashboard</button>
+            
+            <%= link_to "protection-donnees" do %>
+              <button >Voir plus</button>
+            
+            <% end %>
+            
           </div>
       </div>
     </div>
@@ -65,8 +69,12 @@
     <div class="card">
       <h2 src="..." class="card-img-top h-40 bg-red-200" alt="..."> </h2>
       <div class="card-body">
-        <h5 class="card-title">Section Benevole</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">Condition générales d'utilisation</h5>
+<div class="space-x-4 bg-gray-100 py-4 text-center">
+
+        <%= link_to 'Voir plus', "conditions-generale-utilisation" %>
+
+        </div>
       </div>
     </div>
   </div>
@@ -74,8 +82,13 @@
     <div class="card">
       <h2 src="..." class="card-img-top h-40 bg-red-200" alt="..."> </h2>
       <div class="card-body">
-        <h5 class="card-title">Section Projet</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">Charte Action<sup>+</sup> </h5>
+          <div class="space-x-4 bg-gray-100 py-4 text-center">
+
+              <%= link_to 'Voir plus', "charte-action-plus" %>
+
+          </div>
+
       </div>
     </div>
   </div>
@@ -83,8 +96,10 @@
     <div class="card">
      <h2 src="..." class="card-img-top h-40 bg-red-200" alt="..."> </h2>
       <div class="card-body">
-        <h5 class="card-title">Section 9</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">fonctionnement Action<sup class="">+</sup></h5>
+          <div class="space-x-4 bg-gray-100 py-4 text-center">
+              <%= link_to 'Voir plus', "fonctionnement-action-plus" %>
+          </div>
       </div>
     </div>
   </div>
@@ -92,8 +107,11 @@
     <div class="card">
       <h2 src="..." class="card-img-top h-40 bg-red-200" alt="..."> </h2>
       <div class="card-body">
-        <h5 class="card-title">Section 10</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">Urls des Medias Action<sup class="">+</sup></h5>
+          <div class="space-x-4 bg-gray-100 py-4 text-center">
+              <%= link_to 'Voir plus', "medias-action-plus" %>
+          </div>
+        
       </div>
     </div>
   </div>

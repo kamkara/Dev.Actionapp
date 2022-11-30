@@ -10,12 +10,16 @@
             <%= render "dashboard/shared/header" %>
             <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                 <div class="container mx-auto px-6 py-8">
-                    <div class="flex">
-                        <h3 class=" text-gray-700 text-2xl font-medium mr-20">Tableau de bord</h3>
-                        <%= link_to 'Créer un projet', "new-projet", class:"font-bold flex align-item-endd" %>
+                    <div class="flex ">
+                        <div class="flex w-3/4">
+                            <h3 class="text-gray-700 text-2xl font-medium mr-20">Tableau de bord</h3>
+                        </div>
+                        <div class="flex w-1/4 justify-end">
+                            <%= link_to 'Nouvelle Activité', "new-projet",
+                                class:"font-bold bg-blue-600 rounded-full text-white py-2 px-4" %>
+                        </div>
                     </div>
-                    <div
-                        class="mt-8">
+                    <div class="mt-8">
                         <!-- Header -->
                         <%= render "dashboard/projets/statistics" %>
                     </div>

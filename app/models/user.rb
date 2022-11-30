@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
 
+  has_many :privacies
+  has_many :terms
+  has_many :charts
+  has_many :cultures
   has_many :posts
   has_many :articles
   has_many :abouts

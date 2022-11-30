@@ -13,24 +13,30 @@
           <%= link_to 'Se connecter', "action-plus-sign-in", class:"text-sm font-medium" %>
         </i>
       </div>
-      <div class="social flex mx-2 md:mx-4">
-          <a href="#">
-              <i class="bi bi-facebook"></i>
-          </a>
-          <a href="#">
-              <i class="bi bi-instagram mx-2 md:mx-4"></i>
-          </a>
-          <a href="#">
-              <i class="bi bi-twitter"></i>
-          </a>
+      <% if !@media.blank? %>
+        
+      <% @media.each do |medium| %>
+        <div class="social flex mx-2 md:mx-4">
+            <a href="<%= medium.facebook %>">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="<%= medium.instagram %>">
+                <i class="bi bi-instagram mx-2 md:mx-4"></i>
+            </a>
+            <a href="<%= medium.twitter %>">
+                <i class="bi bi-twitter"></i>
+            </a>
 
-          <a href="#">
-              <i class="bi bi-linkedin mx-2 md:mx-4"></i>
-          </a>
-          <a href="#">
-              <i class="bi bi-youtube"></i>
-          </a>
-      </div>
+            <a href="<%= medium.linkedin %>">
+                <i class="bi bi-linkedin mx-2 md:mx-4"></i>
+            </a>
+            <a href="<%= medium.youtube %>">
+                <i class="bi bi-youtube"></i>
+            </a>
+        </div>
+      <% end %>
+      <% end %>
+        
 
     </div>
   </div>

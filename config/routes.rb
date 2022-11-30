@@ -1,8 +1,25 @@
 Rails.application.routes.draw do
+  resources :media
+  resources :statuses
+  resources :cultures
+  resources :privacies
+  resources :terms
+  resources :charts
   resources :benevols
   resources :projets
+  ######################################"
+    get "protection-donnees", to:"privacies#index"
+    get "article-privacy", to:"privacies#new"
+    get "conditions-generale-utilisation", to:"terms#index"
+    get "article-term", to:"terms#new"
+    get "charte-action-plus", to:"charts#index"
+    get "article-chart", to:"charts#new"
+    get "fonctionnement-action-plus", to:"cultures#index"
+    get "article-fonctionnement", to:"cultures#new"
+    get "medias-action-plus", to:"media#index"
+    get "article-media", to:"media#new"
   
-  resources :articles
+    resources :articles
   resources :founders
   resources :campagnes
   resources :bememberships
