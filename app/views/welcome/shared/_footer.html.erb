@@ -6,21 +6,38 @@
 
           <div class="col-md-4">
             <div class="footer-info">
+            
               <h3>Action<sup>+</sup></h3>
-              <% if !@media.blank? %>
-                <% @media.each do |url| %>
-                  <p>
-                    Adresse: <%= url.adresse_action %><br><br>
-                    <strong>Contact:</strong> <%= url.email_action %><br>
-                    <strong>Email:</strong> <%= url.email_action %><br>
-                  </p>
-                <div class="social-links mt-3">
-                    <a href="<%= url.facebook %>" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="<%= url.twitter %>" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="<%= url.instagram %>" class="instagram"><i class="bx bxl-instagram"></i></a>
-                    <a href="<%= url.linkedin %>" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                    <a href="<%= url.youtube %>" class="youtube"><i class="bx bxl-youtube"></i></a>
-                  <% end %>
+              <% @HomeMedias.each do |url| %>
+                <p class="text-xl">
+                  Adresse: <%= url.adresse_action %><br><br>
+                  <strong>Contact:</strong> <%= url.email_action %><br>
+                  <strong>Email:</strong> <%= url.email_action %><br>
+                </p>
+                <div class="social flex mx-2 md:mx-4 mt-4">
+            <a href="<%= url.facebook %>">
+                <i class="text-xl bi bi-facebook"></i>
+            </a>
+            <a href="<%= url.instagram %>">
+                <i class="text-xl bi bi-instagram mx-2 md:mx-4"></i>
+            </a>
+            <a href="<%= url.twitter %>">
+                <i class="text-xl bi bi-twitter"></i>
+            </a>
+
+            <a href="<%= url.linkedin %>">
+                <i class="text-xl bi bi-linkedin mx-2 md:mx-4"></i>
+            </a>
+            <a href="<%= url.youtube %>">
+                <i class="text-xl bi bi-youtube"></i>
+            </a>
+        </div>
+                <div class="social mt-3">
+                  <a href="<%= url.facebook %>" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="<%= url.twitter %>" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="<%= url.instagram %>" class="instagram"><i class="bx bxl-instagram"></i></a>
+                  <a href="<%= url.linkedin %>" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                  <a href="<%= url.youtube %>" class="youtube"><i class="bx bxl-youtube"></i></a>
                 </div>
               <% end %>
             </div>
@@ -41,7 +58,7 @@
             <h4>Champs d'Action<sup>+</sup></h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="action-plus-eau-potable">Eau Potable</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="action-plus-electricite">Eléctrité</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="action-plus-electricite">Eléctricité</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="action-plus-education">Education</a></li>
               
             </ul>
