@@ -95,7 +95,7 @@
                             <span class="mr-2">Mlle</span>
                             <%= f.radio_button :matrimonial, 'Madame', class:"mx-2" %>
                             <span class="mr-2">Mme</span>
-                            <%= f.radio_button :matrimonial, 'Monsieur' %>
+                            <%= f.radio_button :matrimonial, 'Monsieur', class:"mr-2" %>
                             <span class="">M.</span>
                         </div>
                         
@@ -103,17 +103,17 @@
                             <div class="mr-4">
                                 <p class="font-semibold">Vous êtes? :</p>
                             </div>
-                            <%= f.radio_button :gender, 'Femme' , checked: true, class:"mx-2"%>
-                            <span class:"mr-2">Femme</span>
-                            <%= f.radio_button :gender, 'Homme', class:"mx-2"%>
-                            <span class="">Homme</span>
+                            <%= f.radio_button :gender, 'Femme', checked: true %>
+                            <span class="mr-4">Femme</span>
+                            <%= f.radio_button :gender, 'Homme'%>
+                            <span class="ml-2">Homme</span>
                         </div>
                         <div class="w-full mt-2">
                             <div class="">
                                 <p class="font-semibold sm:text-sm">Comment avez vous connu Action<sup class="">+</sup>?:
                                     <br></p>
                                 </div>
-                                <%= f.radio_button :source, 'Ami' , checked: true , class:"ml-2" %>
+                                <%= f.radio_button :source, 'Ami(e)' , checked: true , class:"ml-2" %>
                                 <span class="mr-2">Ami(e)</span>
                                 <%= f.radio_button :source, 'Réseau_Sociaux' %>
                                 <span class="mr-2">Réseau Sociaux</span>
