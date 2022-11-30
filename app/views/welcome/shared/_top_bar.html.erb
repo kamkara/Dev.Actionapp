@@ -13,9 +13,8 @@
           <%= link_to 'Se connecter', "action-plus-sign-in", class:"text-sm font-medium" %>
         </i>
       </div>
-      <% if !@media.blank? %>
-        
-      <% @media.each do |medium| %>
+      
+      <% @HomeMedias.each do |medium| %>
         <div class="social flex mx-2 md:mx-4">
             <a href="<%= medium.facebook %>">
                 <i class="bi bi-facebook"></i>
@@ -35,9 +34,6 @@
             </a>
         </div>
       <% end %>
-      <% end %>
-        
-
     </div>
   </div>
 
