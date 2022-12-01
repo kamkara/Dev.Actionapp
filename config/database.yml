@@ -84,7 +84,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
+  #<<: *default
+  adapter: postgresql
+  encoding: unicode
   database: Dev_ActionApp_production
   username: Dev_ActionApp
   password: <%= ENV["DEV_ACTIONAPP_DATABASE_PASSWORD"] %>
