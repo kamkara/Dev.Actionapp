@@ -10,9 +10,10 @@ class ArticlesController < ApplicationController
   def articles_lists
     @articles = Article.all.order('created_at desc')
   end
-
+  
   # GET /articles/1 or /articles/1.json
   def show
+    @HomeMedias = Medium.all
   end
 
   # GET /articles/new

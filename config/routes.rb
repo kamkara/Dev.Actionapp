@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :media
-  resources :statuses
   resources :cultures
   resources :privacies
   resources :terms
