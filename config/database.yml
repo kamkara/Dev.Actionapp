@@ -87,6 +87,7 @@ production:
   #<<: *default
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: Dev_ActionApp_production
   username: Dev_ActionApp
   password: <%= ENV["DEV_ACTIONAPP_DATABASE_PASSWORD"] %>
