@@ -58,8 +58,8 @@
         <div class="mr-4">
           <p class="font-semibold">Vous êtes? :</p>
         </div>
-        <%= f.radio_button :gender, value:'Femme' %> <span class="mx-2">Femme</span>
-        <%= f.radio_button :gender, value:'Homme' %> <span class="mx-2">Homme</span>
+        <%= f.radio_button :gender, 'Femme' %> <span class="mx-2">Femme</span>
+        <%= f.radio_button :gender, 'Homme' %> <span class="mx-2">Homme</span>
       </div>
       <!-- component -->
         <div class="mb-2">
@@ -73,8 +73,7 @@
         text-white text-sm rounded-full" >Photo profil :</span>
         <%= f.file_field :avatar, class:"hidden" %>
       </label>
-  
-           
+
       <%= f.submit "Crée un compte admin", class:"block w-full bg-green-600 mt-2 py-2 pb-2 rounded-2xl text-white font-semibold mb-2" %>
 		<% end %>
 	</div>
