@@ -1,0 +1,17 @@
+<% @title="Mot du fondateur" %>
+<%= render "welcome/shared/header" %>
+<div class="mt-40">
+  <% if @missions.empty? %>
+      <%= link_to "Mot du fondateur", "new-mission", class:"bg-blue-600 text-white font-bold rounded-md  py-3 px-2" %>
+      <div class="mx-auto md:w-2/3 w-full ">
+          <h3 class="font-semibold">
+              Construire la page</h3>
+      </div>
+  <% else %>
+    <%= render "missions/mission" %>
+  <% end %>
+  
+
+    <%= render "welcome/shared/footer" %>
+</div>
+

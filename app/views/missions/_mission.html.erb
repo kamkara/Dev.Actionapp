@@ -1,0 +1,77 @@
+<%= mission.publie.each do |mission| %>
+<main class="container">
+    <div class="w-full flex md:w-1/2 about-img">
+        <%= image_tag(mission.avatar, alt:"President du conseil d'administration Action+") %>
+    </div>
+    <div class=" flex p-4 p-md-2 mb-4 rounded text-bg-dark">
+        <div class="w-full md:w-1/2 px-0">
+            <h1 class=" font-bold text-4xl fst-italic">
+                <%= mission.title %>
+            </h1>
+            <br>
+                <p class=" lead my-3"><%= mission.message %></p>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Les Campagnes </strong>
+                        <h3 class="mb-0">En financement</h3>
+
+                        <p class="card-text mb-auto">
+                          <%= mission.campagne_message %>
+                        </p>
+                        <%= link_to "Voir plus", "nos-campagnes-financements", class:"stretched-link" %>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                      <%= image_tag(mission.avatar, class:"w-200, h-250") %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">Nos Projets</strong>
+                        <h3 class="mb-0">Actions Terrain</h3>
+                        
+                        <p class="mb-auto"><%= mission.projet_message %></p>
+                        <%= link_to "Voir plus", "les-projets", class:"stretched-link" %>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                      <%= image_tag(mission.avatar, class:"w-200, h-250") %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-8">
+                <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                    Mot du fondateur
+                </h3>
+
+                <article class="blog-post border p-2">
+                    <h2 class="blog-post-title mb-1">
+                        Apprendre plus sur Action<sup class="">+</sup>
+                    </h2>
+                    <p class="blog-post-meta">Notre mission
+                    </p>
+                    <div class="">
+                        <%= mission.mission_text %>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="p-4 mb-3 bg-light rounded">
+                        <h4 class="fst-italic">Devenir membre</h4>
+                        <p class="mb-0"><%= mission.membership_invited %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<% end %>

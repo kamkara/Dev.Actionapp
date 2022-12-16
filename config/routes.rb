@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :missions
   
   
   ######################################"
@@ -28,8 +29,10 @@ Rails.application.routes.draw do
     
   get "agisons-ensemble", to:"involved#index"
   
-  #Founder
-  get "mot-fondateur", to:"founders#index"
+  
+  ##### MOT DU FONDATEUR ######
+  get "mot-fondateur", to:"missions#index"
+  get "new-mission", to:"missions#new"
   
   ##### ACTIONS PLUS ITEMS ######
   get "action-plus-eau-potable", to:'action_item#itemA'

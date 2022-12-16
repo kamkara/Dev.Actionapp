@@ -1,0 +1,62 @@
+<%= form_with(model: mission) do |form| %>
+  <% if mission.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(mission.errors.count, "error") %> prohibited this mission from being saved:</h2>
+
+      <ul>
+        <% mission.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :avatar, style: "display: block" %>
+    <%= form.text_field :avatar %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :message, style: "display: block" %>
+    <%= form.rich_text_area :message %>
+  </div>
+
+  <div>
+    <%= form.label :campagne_message, style: "display: block" %>
+    <%= form.rich_text_area :campagne_message %>
+  </div>
+
+  <div>
+    <%= form.label :campagne_avatar, style: "display: block" %>
+    <%= form.text_field :campagne_avatar %>
+  </div>
+
+  <div>
+    <%= form.label :projet_message, style: "display: block" %>
+    <%= form.rich_text_area :projet_message %>
+  </div>
+
+  <div>
+    <%= form.label :projet_avatar, style: "display: block" %>
+    <%= form.text_field :projet_avatar %>
+  </div>
+
+  <div>
+    <%= form.label :mission_text, style: "display: block" %>
+    <%= form.rich_text_area :mission_text %>
+  </div>
+
+  <div>
+    <%= form.label :membership_invited, style: "display: block" %>
+    <%= form.rich_text_area :membership_invited %>
+  </div>
+
+  <div class="mt-4">
+    <%= form.submit "Publié Mot du fondateur", class:"btn btn-primary py-2 px-4 rounded-full bg-blue-600 text-white" %>
+  </div>
+<% end %>
