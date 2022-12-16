@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-     #Add layouts content
+    #Add layouts content
     def title
     base_title = "Action+  Missions humanitaires"
     if @title.nil?

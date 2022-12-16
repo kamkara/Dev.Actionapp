@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
 
+
   has_many :privacies
   has_many :terms
   has_many :charts

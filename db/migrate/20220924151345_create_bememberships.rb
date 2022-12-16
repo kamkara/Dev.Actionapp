@@ -14,7 +14,7 @@ class CreateBememberships < ActiveRecord::Migration[7.0]
       t.string :employer
       t.string :source
       t.string :avatar
-      t.boolean :gender
+      t.string :gender
 
       t.timestamps
     end
