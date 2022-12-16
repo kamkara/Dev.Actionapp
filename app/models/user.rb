@@ -21,7 +21,9 @@ class User < ApplicationRecord
   #has_many :privates
   has_one_attached :avatar
   
-  STATUS= ["Editeur", "Level 2", "Level 3"]
+  STATUS_ITEMS = ["En Edition", "La une", "Publié", "Archive"]
+
+  STS=["En Edition","Approbation", "Publié"]
 
   def full_name
     "#{self.first_name} #{self.last_name}" 

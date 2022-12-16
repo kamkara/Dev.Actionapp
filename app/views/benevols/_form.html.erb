@@ -1,66 +1,64 @@
-<div class="bg-white p-2">
-<%= form_with(model: benevol) do |f| %>
-    <% if benevol.errors.any? %>
-        <div style="color: red">
-            <h2><%= pluralize(benevol.errors.count, "error") %>
-                prohibited this benevol from being saved:</h2>
+<div class="bg-white p-4 m-4">
+    <%= form_with(model: benevol) do |f| %>
+        <% if benevol.errors.any? %>
+            <div style="color: red">
+                <h2><%= pluralize(benevol.errors.count, "error") %>
+                    prohibited this benevol from being saved:</h2>
 
-            <ul>
-                <% benevol.errors.each do |error| %>
-                    <li><%= error.full_message %></li>
-                <% end %>
-            </ul>
+                <ul>
+                    <% benevol.errors.each do |error| %>
+                        <li><%= error.full_message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+        <div class="flex my-2">
+            <div class="flex w-1/2">
+                <%= f.text_field :full_name, label:"Nom du Bénévol:", class:"w-full mr-2 outline-blue-500 p-2 border rounded-md",
+                placeholder:'Nom et Prénom ...' %>
+            </div>
+            <div class="flex w-1/2">
+                <%= f.text_field :role , class:"w-full  p-2 border rounded-md outline-blue-500", placeholder:" Role du Bénévole ..." %>
+            </div>
+        </div>
+        <div class="mt-2">      
+            <%= f.text_field :link_fb, class:"w-full p-2 border rounded-md outline-blue-500", label:"Adresse du compte Facebook:", placeholder:" URL facebook ..." %>
+        </div>
+
+        <div class="flex my-2">
+            <div class="flex w-1/2">
+                <%= f.text_field :link_tw, class:"w-full mr-2 p-2 border rounded-md outline-blue-500", label:"Adresse du compte Twitter:", placeholder:" URL Twitter ..." %>
+            </div>
+            <div class="flex w-1/2 ">
+                <%= f.text_field :link_ldin, class:"w-full p-2 border rounded-md outline-blue-500", label:"Adresse du compte LinkedIn:", placeholder:" URL LinkedIn ..." %>
+            </div>
+        </div>
+
+    
+        <!-- component -->
+        <div class="flex mb-16 ">
+            <div class=" flex mt-2 rounded-lg text-center w-56">
+                <div class="mb-2 mr-10">
+                    <%= image_tag("logo/logo-action.png", 
+                            class:"h-10 w-10 rounded-full object-cover object-center ml-10 outline-blue-500",
+                            alt:"Avatar Upload") %>
+                    <br>
+                    <label class="cursor-pointer">
+                        <span class="mt-2 text-base leading-normal p-2 bg-blue-500 text-white text-sm rounded-full">La photo Couverture:</span>
+                        <%= f.file_field :img, class:"hidden" %>
+                    </label>
+                </div>
+            </div>
+            
+            <div class=" ml-10">
+                <%= f.label 'Status:' %>
+                <br>
+                <%= f.select(:status, User::STATUS_ITEMS, { prompt: "Choisir" }, class:" p-2 bg-white border outline-blue-500 rounded-none w-full select") %>
+            </div>
+        </div>
+        <div class="form-actions mt-12">
+            <%= f.submit "Ajouter Bénévole", class:"font-bold bg-blue-600 rounded-full text-white py-2 px-4"  %>
         </div>
     <% end %>
-    <div class="flex my-2">
-        <div class="flex w-1/2">
-            <%= f.text_field :full_name, label:"Nom du Bénévol:", class:"w-full mr-2 outline-blue-500 p-2 border rounded-md",
-            placeholder:'Nom et Prénom ...' %>
-        </div>
-        <div class="flex w-1/2">
-<%= f.text_field :role , class:"w-full  p-2 border rounded-md outline-blue-500", placeholder:" Role du Bénévole ..." %>
-
-        </div>
-    </div>
-    <div class="mt-2">      
-        <%= f.text_field :link_fb, class:"w-full p-2 border rounded-md outline-blue-500", label:"Adresse du compte Facebook:", placeholder:" URL facebook ..." %>
-    </div>
-
-    <div class="flex my-2">
-        <div class="flex w-1/2">
-            <%= f.text_field :link_tw, class:"w-full mr-2 p-2 border rounded-md outline-blue-500", label:"Adresse du compte Twitter:", placeholder:" URL Twitter ..." %>
-        </div>
-        <div class="flex w-1/2 ">
-        <%= f.text_field :link_ldin, class:"w-full p-2 border rounded-md outline-blue-500", label:"Adresse du compte LinkedIn:", placeholder:" URL LinkedIn ..." %>
-        </div>
-    </div>
-
-  
-    <!-- component -->
-      <div class="flex ">
-        <div class=" flex mt-2 rounded-lg text-center w-56">
-          <div class="mb-2 mr-10">
-            <%= image_tag("logo/logo-action.png", 
-                    class:"h-10 w-10 rounded-full object-cover object-center ml-10 outline-blue-500",
-                    alt:"Avatar Upload") %>
-              <br>
-              <label class="cursor-pointer">
-                  <span class="mt-2 text-base leading-normal p-2 bg-blue-500 text-white text-sm rounded-full">La photo Couverture:</span>
-                  <%= f.file_field :img, class:"hidden" %>
-              </label>
-          </div>
-        </div>
-        
-        <div class=" ml-10">
-        <%= f.label 'Status:' %>
-        <br>
-            <%= f.select(:status, Benevol::STATUS, { prompt: "Choisir" }, class:" p-2 bg-white border outline-blue-500 rounded-none w-full select") %>
-        </div>
-    </div>
-    <div>
-        <%= f.submit "Ajouter N. Benevole", class:"font-bold p-2 border rounded-md bg-blue-500 font-semibold text-white my-2"  %>
-    </div>
-<% end %>
-
 
 </div>

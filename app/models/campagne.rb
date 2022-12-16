@@ -3,12 +3,7 @@ class Campagne < ApplicationRecord
   has_rich_text :content
   has_one_attached :heroImg
 
-  
-  Campagne.all.with_rich_text_content # Preload the body without attachments.
-  Campagne.all.with_rich_text_content_and_embeds # Preload both body and attachments.
 
-
-  STATUS= ["Encours", "Approuver", "La une", "Archive" ]
   validates :title, :content, :published, :amount, presence: true
   #validates_comparison_of :start_date, greater_than: -> { Date.today }
   validates :title, :content, length: { minimum:5}

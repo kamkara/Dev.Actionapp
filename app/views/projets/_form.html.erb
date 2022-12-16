@@ -56,7 +56,7 @@
                         <div class=" ml-10">
                             <%= f.label 'Status:' %>
                             <br>
-                                <%= f.select(:status, Projet::STATUS, { prompt: "Choisir" }, class:" p-2 bg-white outline-blue-500 rounded-none w-full select") %>
+                                <%= f.select(:status, User::STATUS_ITEMS, { prompt: "Choisir" }, class:" p-2 bg-white outline-blue-500 rounded-none w-full select") %>
                             </div>
                         </div>
                     </div>

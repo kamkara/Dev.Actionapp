@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  resources :media
-  resources :cultures
-  resources :privacies
-  resources :terms
-  resources :charts
-  resources :benevols
-  resources :projets
-
+  
   
   ######################################"
     get "protection-donnees", to:"privacies#index"
@@ -19,13 +12,20 @@ Rails.application.routes.draw do
     get "article-fonctionnement", to:"cultures#new"
     get "medias-action-plus", to:"media#index"
     get "article-media", to:"media#new"
-  
-    resources :articles
-  resources :founders
-  resources :campagnes
-  resources :bememberships
-  
-  
+    
+    resources :founders
+    resources :benevols, except: %i[:new, :index]
+    resources :projets, except: %i[:new, :index]
+    resources :articles, except: %i[:new, :index]
+    resources :campagnes, except: %i[:new, :index, :edit]
+    resources :bememberships, except: %i[:new, :index, :page_good]
+    resources :media, except: %i[:new, :index]
+    resources :cultures, except: %i[:new, :index]
+    resources :privacies, except: %i[:new, :index]
+    resources :terms, except: %i[:new, :index]
+    resources :charts, except: %i[:new, :index]
+    
+    
   get "agisons-ensemble", to:"involved#index"
   
   #Founder
@@ -35,8 +35,6 @@ Rails.application.routes.draw do
   get "action-plus-eau-potable", to:'action_item#itemA'
   get "action-plus-electricite", to:'action_item#itemB'
   get "action-plus-education", to:'action_item#itemC'
-  
-
   
   ##### ARTICLES ######
   get "new-article", to:"articles#new"
@@ -80,7 +78,7 @@ Rails.application.routes.draw do
     get 'action-plus-sign-up', to: 'devise/registrations#new', as: "new_user_registration"
     get 'profile/edit'    => 'devise/registrations#edit'
     get 'profile/cancel'  => 'devise/registrations#cancel'
-    delete 'sign-out', to: 'devise/sessions#destroy'
+    delete 'sign-out', to:'devise/sessions#destroy'
   end
 
   devise_for :users

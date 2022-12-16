@@ -1,3 +1,4 @@
+<div class="bg-white p-4 m-4">
 <%= form_for( @article) do |f| %>
   <% if @article.errors.any? %>
     <div style="color: red">
@@ -49,7 +50,7 @@
                     <div class=" ml-10">
                         <%= f.label 'Status:' %>
                         <br>
-                            <%= f.select(:status, Article::STATUS, { prompt: "Choisir" },
+                            <%= f.select(:status, User::STATUS_ITEMS, { prompt: "Choisir" },
               class:" p-2 bg-white rounded-none w-full select") %>
                         </div>
                     </div>
@@ -57,8 +58,10 @@
             </div>
   </div>
 
-  <div class="form-actions -mt-4 ml-12">
-    <%= f.submit "Créer l'Article", class:"font-bold p-2 border rounded-md bg-green-500 text-white my-2" %>
+  <div class="form-actions  ml-8">
+    <%= f.submit "Créer l'Article", class:"font-bold bg-blue-600 rounded-full text-white py-2 px-4" %>
   </div>
 
 <% end %>
+
+</div>

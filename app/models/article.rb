@@ -4,7 +4,6 @@ class Article < ApplicationRecord
   has_one_attached :heroImg
   
 
-  STATUS= ["Encours", "Approbation", "La une", "Archive"]
   validates :title, :content, :published, :slug, presence: true
   validates :title, :content, length: { minimum:5}
 

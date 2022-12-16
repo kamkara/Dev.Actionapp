@@ -11,4 +11,5 @@ class ApplicationRecord < ActiveRecord::Base
   scope :monthlyActif, ->  { where(:created_at => (Time.now.midnight - 30.day)..Time.now.midnight)}
   scope :weeklyActif, ->  { where(:created_at => (Time.now.midnight - 7.day)..Time.now.midnight)}
   # Ex:- scope :active, {where(:active => true)}
+  scope :publish, -> { where(:slug => "Publié")}
 end

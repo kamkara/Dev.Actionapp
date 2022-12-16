@@ -4,5 +4,5 @@ class Chart < ApplicationRecord
 
   scope :principal, -> { where(:slug => "Principal")}
   # Ex:- scope :active, -> {where(:active => true)}
-  STS=["Brouillon", "Principal"]
+  
 end
